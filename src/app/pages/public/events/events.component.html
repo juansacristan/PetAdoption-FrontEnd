@@ -1,0 +1,42 @@
+<form 
+    class="form form-events"
+    [formGroup]="formData" 
+    (ngSubmit)="onSubmit()"
+>
+    <h1>events</h1>
+    <div class="form-content">
+        <div class="field">
+            <label for="nameofevents">name of events *</label>
+            <input type="text" formControlName="nameofevents" id="nameofevents" placeholder="Ej: name of the events" />
+        </div>
+
+        <div class="field">
+            <label for="date">date *</label>
+            <input type="number" formControlName="date" id="date" placeholder="Ej: date of the events"/>
+        </div>
+
+        <div class="field">
+            <label for="starttime">start time *</label>
+            <input type="number" formControlName="starttime" id="starttime" placeholder="Ej: time start "/>
+        </div>
+
+        <div class="field">
+            <label for="timeofcompletion">time of completion *</label>
+            <input type="number" formControlName="timeofcompletion" id="timeofcompletion" placeholder="Ej: time of completion "/>
+        </div>
+
+        <div class="field">
+            <label for="place">place *</label>
+            <input type="text" formControlName="place" id="place" placeholder="Ej: place of event "/>
+        </div>
+
+        <div class="field">
+            <label for="descripcion">descripcion *</label>
+            <input type="text" formControlName="descripcion" id="descripcion" placeholder="Ej: event description"/>
+        </div>
+        <div class="field">
+            <button type="submit">Login</button>
+        </div>
+    </div>
+
+</form>

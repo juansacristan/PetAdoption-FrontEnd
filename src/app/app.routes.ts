@@ -10,6 +10,10 @@ import { RegisterPetComponent } from './pages/public/register-pet/register-pet.c
 import { EditPetsComponent } from './pages/private/edit.pets/edit.pets.component';
 import { TypePetsComponent } from './pages/private/type-pets/type-pets.component';
 import { ListPetsComponent } from './pages/public/list-pets/list-pets.component';
+import { ListOfEventsComponent } from './pages/private/events/list-of-events/list-of-events.component';
+import { CreateEventComponent } from './pages/private/events/create-event/create-event.component';
+import { EditEventComponent } from './pages/private/events/edit-event/edit-event.component';
+import { EventsComponent } from './pages/public/events/events.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -19,10 +23,14 @@ export const routes: Routes = [
     {path: 'admin', component: DashboardComponent},
     {path: '404', component: PageNotFoundComponent},
     {path: 'pets', component: ListPetsComponent},
+    { path: "events", component: EventsComponent},
     {path: 'admin/users', component: UsersComponent},
+    { path: "admin/events", component: ListOfEventsComponent},
     {path: 'admin/pet/edit', component: EditPetsComponent},
     {path: 'admin/pet/new', component: RegisterPetComponent},
-    {path: 'admin/pet/type', component: TypePetsComponent},
+    {path: 'admin/pet/type', component: TypePetsComponent},   
+    { path: "admin/event/new", component: CreateEventComponent},
+    { path: "admin/event/edit", component: EditEventComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full' },
     {path: '**', redirectTo: '404', pathMatch: 'full'}
 ];
