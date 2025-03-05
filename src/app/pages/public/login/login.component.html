@@ -1,1 +1,47 @@
-<p>login works!</p>
+<form 
+    class="form form-login"
+    [formGroup]="formData"
+    (ngSubmit)="onSubmit()"
+>
+    <h1>Login</h1>
+
+    <div> {{ this.formData.get('username')?.errors | json }} </div>
+
+    <div class="form-content">
+        <div class="field">
+            <label for="username">Username*</label>
+            <input type="text" formControlName="username" id="username" placeholder="Ej: tucorreo@correo.com" />
+            <div class="error">
+                @if (this.formData.get('username')?.invalid && (this.formData.get('username')?.dirty || this.formData.get('username')?.touched) ) {
+                    @if (this.formData.get('username')?.errors?.['required']) {
+                        <span>El correo es obligatorio</span>
+                    }
+                    @if (this.formData.get('username')?.errors?.['email']){
+                        <span>Formato de correo invalido</span>
+                    }
+                }
+            </div>
+        </div>
+        <div class="field">
+            <label for="password">Password*</label>
+            <input type="password" formControlName="password" id="password" placeholder="Ej: Gbi754Mhcr4"/>
+        </div>
+        <div class="error">
+            @if (this.formData.get('password')?.invalid && (this.formData.get('password')?.dirty || this.formData.get('password')?.touched) ) {
+                @if (this.formData.get('password')?.errors?.['required'] ){
+                    <span>La contraseña es obligatoria</span>
+                }
+                @if (this.formData.get('password')?.errors?.['minLength']) {
+                    <span>La longitud minima de la contraseña es 6 caracteristicas</span>
+                }
+                @if (this.formData.get('password')?.errors?.['maxLength']) {
+                    <span>La longitud máxima de la contraseña es 12 caracteristicas</span>                    
+                }
+            }
+        </div>
+        <div class="field">
+            <label for="">Username*</label>
+            <button type="submit">Login</button>
+        </div>
+    </div>
+</form>
