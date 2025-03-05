@@ -3,15 +3,18 @@
         <img src="/assets/images/site-logo.png" alt="Site-logo: Logo pets adoption" class="site-logo">
     </a>
     <ul class="main-menu">
-        <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+        <li><a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Admin</a></li>
         <!-- <li><a routerLink="/admin/users" routerLinkActive="active">Users</a></li> -->
-         <li><a [routerLink]="['admin', 'users']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Users</a></li>
+        <li><a [routerLink]="['admin', 'users']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Users</a></li>
+        <li><a [routerLink]="['admin', 'user','new']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Users-new</a></li>
+        <li><a [routerLink]="['admin', 'user','edit']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Users-edit</a></li>
         <li><a routerLink="/credits" routerLinkActive="active">Credits</a></li>
         <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
         <li><a routerLink="/register" routerLinkActive="active">Register</a></li>
         <li><a routerLink="/pets" routerLinkActive="active">List Pets</a></li>
-        <li><a routerLink="admin/pet/new" routerLinkActive="active">Register</a></li>
-        <li><a routerLink="admin/pet/edit" routerLinkActive="active">Edit</a></li>
-        <li><a routerLink="admin/pet/type" routerLinkActive="active">Type</a></li>
+        <li><a routerLink="admin/pet/new" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Pet-new</a></li>
+        <li><a routerLink="admin/pet/edit" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Pet-edit</a></li>
+        <li><a routerLink="admin/pet/type" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Pet-type</a></li>
+        <li><a [routerLink]="['admin', 'pet','type','new']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Type-pet-new</a></li>
     </ul>
 </nav>

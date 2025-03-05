@@ -10,6 +10,9 @@ import { RegisterPetComponent } from './pages/public/register-pet/register-pet.c
 import { EditPetsComponent } from './pages/private/edit.pets/edit.pets.component';
 import { TypePetsComponent } from './pages/private/type-pets/type-pets.component';
 import { ListPetsComponent } from './pages/public/list-pets/list-pets.component';
+import { UserRegisterComponent } from './pages/private/users/user-register/user-register.component';
+import { UserEditComponent } from './pages/private/users/user-edit/user-edit.component';
+import { TypePetNewComponent } from './pages/private/type-pets/type-pet-new/type-pet-new.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -20,9 +23,12 @@ export const routes: Routes = [
     {path: '404', component: PageNotFoundComponent},
     {path: 'pets', component: ListPetsComponent},
     {path: 'admin/users', component: UsersComponent},
+    {path: 'admin/user/new', component: UserRegisterComponent},
+    {path: 'admin/user/edit', component: UserEditComponent},
     {path: 'admin/pet/edit', component: EditPetsComponent},
     {path: 'admin/pet/new', component: RegisterPetComponent},
     {path: 'admin/pet/type', component: TypePetsComponent},
+    {path: 'admin/pet/type/new', component: TypePetNewComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full' },
     {path: '**', redirectTo: '404', pathMatch: 'full'}
 ];

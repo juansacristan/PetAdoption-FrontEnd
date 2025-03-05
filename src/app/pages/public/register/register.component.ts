@@ -11,29 +11,12 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class RegisterComponent {
   formData!: FormGroup;
-  public roles: String[] = ['registered', 'moderator', 'admin'];
 
   constructor(private authService: AuthService){
     this.formData = new FormGroup({
-      name: new FormControl(
-        '',
-        [Validators.required]
-      ),
-      age: new FormControl(),
-      addres: new FormControl(),
-      cellular: new FormControl(
-        '',
-        [Validators.required, Validators.minLength(9), Validators.maxLength(12)]
-      ),
-      role: new FormControl('',[Validators.required]),
-      username: new FormControl(
-        '',
-        [Validators.required, Validators.email]
-      ),
-      password: new FormControl(
-        '',
-        [Validators.required, Validators.minLength(5), Validators.maxLength(8)]
-      )
+      name: new FormControl( '' , [ Validators.required ] ),
+      username: new FormControl( '', [ Validators.required, Validators.email ] ),
+      password: new FormControl( '', [ Validators.required, Validators.minLength( 6 ), Validators.maxLength( 12 ) ] ),
     });
   }
   onSubmit(){
