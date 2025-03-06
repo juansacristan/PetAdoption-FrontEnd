@@ -4,7 +4,7 @@
     (ngSubmit)="onSubmit()"
 >
 
-    <h1>Type pets</h1>
+    <h1>Registrar de Tipo de mascota</h1>
 
     <div> {{ this.formData.get('name')?.errors | json }} </div>
 
@@ -21,9 +21,8 @@
             }
         </div>
         <div class="field">
-            <label for="name">Description*</label>
-            <textarea name="description" id="description"></textarea>
-            <input type="text" formControlName="description" id="description" placeholder="Ej: golden retriever">
+            <label for="description">Description*</label>
+            <textarea formControlName="description" id="description" placeholder="Ej: golden retriever"></textarea>
         </div>
         <div class="error">
             @if (this.formData.get('description')?.invalid && (this.formData.get('description')?.dirty || this.formData.get('description')?.touched) ) {

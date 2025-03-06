@@ -1,0 +1,90 @@
+<form 
+    class="form form-register"
+    [formGroup]="formData"
+    (ngSubmit)="onSubmit()"
+>
+    <h1>Editar Mascotas</h1>
+
+    <div> {{ this.formData.get('username')?.errors | json }} </div>
+
+    <div class="form-container">
+
+    <div class="form-content">
+        <div class="field">
+            <label for="name">Nombre*</label>
+            <input type="text" formControlName="name" id="name" placeholder="Ej: Amy" />
+        </div>
+        <div class="error">
+            @if (this.formData.get('name')?.invalid && (this.formData.get('name')?.dirty || this.formData.get('name')?.touched) ) {
+                @if (this.formData.get('name')?.errors?.['required']) {
+                    <span>El nombre es obligatorio</span>
+                }
+            }
+        </div>
+        <div class="field">
+            <label for="race">Raza*</label>
+            <input type="text" formControlName="race" id="race" placeholder="Ej: golden retriever" />
+        </div>
+        <div class="error">
+            @if (this.formData.get('race')?.invalid && (this.formData.get('race')?.dirty || this.formData.get ('race')?.touched) ) {
+                @if (this.formData.get('race')?.errors?.['required']) {
+                    <span>La raza es obligatorio</span>
+                }
+            }
+        </div> 
+        <div class="field">
+            <label for="age">Edad*</label>
+            <input type="number" formControlName="age" id="age" placeholder="Ej: 6"/>
+        </div>
+        <div class="field">
+            <label for="gender">Genero*</label>
+            <!-- <input type="text" formControlName="gender" id="gender" placeholder="Ej: femenino" /> -->
+             <select formControlName="gender" id="gender">
+                <option value="">Selected...</option>
+                @for (gender of genders; track $index) {
+                    <option [value]="gender">{{gender}}</option>
+                }
+             </select>
+        </div>
+        <div class="field">
+            <label for="typeanimal">Tipo de animal*</label>
+            <!-- <input type="text" formControlName="typeanimal" id="typeanimal" placeholder="Ej: perro" /> -->
+             <select formControlName="typeanimal" id="typeanimal">
+                <option value="">Selected...</option>
+                @for (typeanimal of typeanimals; track $index) {
+                    <option [value]="typeanimal">{{typeanimal}}</option>
+                }
+             </select>
+        </div>
+        <div class="field">
+            <label for="name">Descripción*</label>
+            <textarea name="description" id="description"></textarea>
+            <input type="text" formControlName="description" id="description" placeholder="Ej: golden retriever">
+        </div>
+        <div class="error">
+            @if (this.formData.get('description')?.invalid && (this.formData.get('description')?.dirty || this.formData.get('description')?.touched) ) {
+                @if (this.formData.get('description')?.errors?.['required']) {
+                    <span>El description es obligatorio</span>
+                }
+            }
+        </div>
+        <div class="field">
+            <label for="image">Subir la foto*</label>
+            <input type="file" formControlName="image" id="image" accept="image/*"/>
+        </div>
+        <div class="field">
+            <label for="state">Estado*</label>
+            <!-- <input type="text" formControlName="state" id="state" placeholder="Ej: femenino" /> -->
+             <select formControlName="state" id="state">
+                <option value="">Selected...</option>
+                @for (state of states; track $index) {
+                    <option [value]="state">{{state}}</option>
+                }
+             </select>
+        </div>
+        <div class="field">
+            <button type="submit" [disabled]="formData.invalid">Registro mascota</button>
+        </div>
+    </div>
+</div>
+</form>

@@ -1,1 +1,93 @@
-<p>user-edit works!</p>
+<form 
+    class="form form-register"
+    [formGroup]="formData"
+    (ngSubmit)="onSubmit()"
+>
+    <h1>Editar usuario</h1>
+
+    <div> {{ this.formData.get('username')?.errors | json }} </div>
+
+    <div class="form-container">
+
+    <div class="form-content">
+        <div class="field">
+            <label for="name">Name*</label>
+            <input type="text" formControlName="name" id="name" placeholder="Ej: Juan" />
+        </div>
+        <div class="error">
+            @if (this.formData.get('name')?.invalid && (this.formData.get('name')?.dirty || this.formData.get('name')?.touched) ) {
+                @if (this.formData.get('name')?.errors?.['required']) {
+                    <span>El nombre es obligatorio</span>
+                }
+            }
+        </div>
+        <div class="field">
+            <label for="age">Age</label>
+            <input type="number" formControlName="age" id="age" placeholder="Ej: 31"/>
+        </div>
+        <div class="field">
+            <label for="addres">Addres</label>
+            <input type="text" formControlName="addres" id="addres" placeholder="Ej: Calle 00 # 00 - 00" />
+        </div>
+        <div class="field">
+            <label for="cellular">Cellular*</label>
+            <input type="number" formControlName="cellular" id="cellular" placeholder="Ej: 3102345678"/>
+        </div>
+        <div class="error">
+            @if (this.formData.get('cellular')?.invalid && (this.formData.get('cellular')?.dirty || this.formData.get('cellular')?.touched) ) {
+                @if (this.formData.get('cellular')?.errors?.['required']) {
+                    <span>El numero celular es obligatorio</span>
+                }
+                @if (this.formData.get('cellular')?.errors?.['minlength']) {
+                    <span>La longitud minima de la contraseña es 10 caracteristicas</span>
+                }
+                @if (this.formData.get('password')?.errors?.['maxLength']) {
+                    <span>La longitud máxima de la contraseña es 10 caracteristicas</span>                    
+                }
+            }
+        </div>
+        <div class="field">
+            <label for="role">Role</label>
+            <!-- <input type="text" formControlName="role" id="role" placeholder="Ej: admin" /> -->
+             <select formControlName="role" id="role">
+                <option value="">Selected...</option>
+                @for (role of roles; track $index) {
+                    <option [value]="role">{{role}}</option>
+                }
+             </select>
+        </div>
+        <div class="field">
+            <label for="username">Username*</label>
+            <input type="text" formControlName="username" id="username" placeholder="Ej: tucorreo@correo.com" />
+        </div>
+        <div class="error">
+            @if (this.formData.get('username')?.invalid && (this.formData.get('username')?.dirty || this.formData.get ('username')?.touched) ) {
+                @if (this.formData.get('username')?.errors?.['required']) {
+                    <span>El correo es obligatorio</span>
+                }
+            }
+        </div>
+        <div class="field">
+            <label for="password">Password*</label>
+            <input type="password" formControlName="password" id="password" placeholder="Ej: Gbi754Mhcr4"/>
+        </div>
+        <div class="error">
+            @if (this.formData.get('password')?.invalid && (this.formData.get('password')?.dirty || this.formData.get('password')?.touched) ) {
+                @if (this.formData.get('password')?.errors?.['required'] ){
+                    <span>La contraseña es obligatoria</span>
+                }
+                @if (this.formData.get('password')?.errors?.['minLength']) {
+                    <span>La longitud minima de la contraseña es 6 caracteristicas</span>
+                }
+                @if (this.formData.get('password')?.errors?.['maxLength']) {
+                    <span>La longitud máxima de la contraseña es 12 caracteristicas</span>                    
+                }
+            }
+        </div>
+        <div class="field">
+            <button type="submit" [disabled]="formData.invalid">Register</button>
+            <button type="submit">Sign in to another account</button>
+        </div>
+    </div>
+</div>
+</form>

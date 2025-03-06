@@ -6,8 +6,7 @@ import { CreditsComponent } from './pages/public/credits/credits.component';
 import { DashboardComponent } from './pages/private/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './pages/public/page-not-found/page-not-found.component';
 import { UsersComponent } from './pages/private/users/users.component';
-import { RegisterPetComponent } from './pages/public/register-pet/register-pet.component';
-import { EditPetsComponent } from './pages/private/edit.pets/edit.pets.component';
+import { RegisterPetComponent } from './pages/public/list-pets/register-pet/register-pet.component';
 import { TypePetsComponent } from './pages/private/type-pets/type-pets.component';
 import { ListPetsComponent } from './pages/public/list-pets/list-pets.component';
 import { UserRegisterComponent } from './pages/private/users/user-register/user-register.component';
@@ -17,6 +16,9 @@ import { ListOfEventsComponent } from './pages/private/events/list-of-events/lis
 import { CreateEventComponent } from './pages/private/events/create-event/create-event.component';
 import { EditEventComponent } from './pages/private/events/edit-event/edit-event.component';
 import { EventsComponent } from './pages/public/events/events.component';
+import { PetEditComponent } from './pages/public/list-pets/pet-edit/pet-edit.component';
+import { PetNewPrivateComponent } from './pages/private/pets/pet-new-private/pet-new-private.component';
+import { PetEditPrivateComponent } from './pages/private/pets/pet-edit-private/pet-edit-private.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -26,12 +28,14 @@ export const routes: Routes = [
     {path: 'admin', component: DashboardComponent},
     {path: '404', component: PageNotFoundComponent},
     {path: 'pets', component: ListPetsComponent},
-    { path: "events", component: EventsComponent},
+    {path: "events", component: EventsComponent},
+    {path: 'pet/new', component: RegisterPetComponent},
+    {path: 'pet/edit', component: PetEditComponent},
     {path: 'admin/users', component: UsersComponent},
+    {path: 'admin/pet/new', component: PetNewPrivateComponent},
+    {path: 'admin/pet/edit', component: PetEditPrivateComponent},
     {path: 'admin/user/new', component: UserRegisterComponent},
     {path: 'admin/user/edit', component: UserEditComponent},
-    {path: 'admin/pet/edit', component: EditPetsComponent},
-    {path: 'admin/pet/new', component: RegisterPetComponent},
     {path: 'admin/pet/type', component: TypePetsComponent},
     {path: 'admin/pet/type/new', component: TypePetNewComponent},
     { path: "admin/events", component: ListOfEventsComponent},  
