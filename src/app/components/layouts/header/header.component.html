@@ -18,6 +18,10 @@
         <li><a routerLink="admin/pet/edit" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Editar admin mascotas</a></li>
         <li><a routerLink="admin/pet/type" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Tipo de mascotas</a></li>
         <li><a [routerLink]="['admin', 'pet','type','new']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Registrar de tipo de mascota</a></li>
+        <li><a routerLink="/events" routerLinkActive="active">events</a></li>
+        <li><a routerLink="admin/event/edit" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Editar eventos de mascotas</a></li>
+        <li><a routerLink="admin/event/new" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Registrar nuevos eventos mascotas</a></li>
+        <li><a routerLink="admin/event/list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Visulizar eventos de mascotas</a></li>
     </ul>
     <!-- <pre>{{user | json }}</pre> -->
     <p>Hola, {{user.name}}</p>
