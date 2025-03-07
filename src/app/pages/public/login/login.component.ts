@@ -1,6 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class LoginComponent {
   // Atributos
   formData!: FormGroup;
-  constructor(){
+  constructor(private authService: AuthService){
     // Agrupacion de campos del formulario
     this.formData = new FormGroup({
       username: new FormControl(
@@ -30,6 +31,19 @@ export class LoginComponent {
     if (this.formData.valid){
       console.log(inputData); // Ensviar los datos al BackEnd
     }; 
-    this.formData.reset(); // Limpia los campos del formulario
+    this.authService.loginUser( inputData ).subscribe({
+      next: ( data ) => {
+        console.log( data );
+        localStorage.setItem('token', data.token! );
+        delete data.data?.password;
+        localStorage.setItem('authUser', JSON.stringify( data.data ) );
+      },
+      error: ( err ) => {
+        console.error( err );
+      },
+      complete: () => {
+        this.formData.reset();    // Limpia los campos del formulario
+      }
+    }); // Limpia los campos del formulario
   }
 }
