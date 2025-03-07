@@ -3,16 +3,16 @@
     [formGroup]="formData"
     (ngSubmit)="onSubmit()"
 >
-    <h1>Register</h1>
+    <h1 class="form-titulo">Registrar</h1>
 
     <div> {{ this.formData.get('username')?.errors | json }} </div>
 
     <div class="form-container">
 
-    <div class="form-content">
-        <div class="field">
-            <label for="name">Name*</label>
-            <input type="text" formControlName="name" id="name" placeholder="Ej: Juan" />
+    <div class="form-content form-body">
+        <div class="field input-grupo">
+            <!-- <label for="name">Nombre*</label> -->
+            <input type="text" formControlName="name" id="name" placeholder="Nombre" class="form-input"/>
         </div>
         <div class="error">
             @if (this.formData.get('name')?.invalid && (this.formData.get('name')?.dirty || this.formData.get('name')?.touched) ) {
@@ -21,9 +21,9 @@
                 }
             }
         </div>
-        <div class="field">
-            <label for="age">Age</label>
-            <input type="number" formControlName="age" id="age" placeholder="Ej: 31"/>
+        <div class="field input-grupo">
+            <!-- <label for="age">Edad</label> -->
+            <input type="number" formControlName="age" id="age" placeholder="Edad" class="form-input"/>
         </div>
         <div class="field">
             <label for="addres">Addres</label>

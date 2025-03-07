@@ -12,7 +12,8 @@ import { AuthService } from '../../../services/auth.service';
 export class LoginComponent {
   // Atributos
   formData!: FormGroup;
-  constructor(private authService: AuthService){
+
+  constructor( private authService: AuthService ) {
     // Agrupacion de campos del formulario
     this.formData = new FormGroup({
       username: new FormControl(
@@ -30,20 +31,24 @@ export class LoginComponent {
     const inputData = this.formData.value;
     if (this.formData.valid){
       console.log(inputData); // Ensviar los datos al BackEnd
+
+      this.authService.loginUser( inputData ).subscribe({
+        next: ( data ) => {
+          console.log( data );
+          localStorage.setItem('token', data.token! );
+          delete data.data?.password;
+          localStorage.setItem('authUser', JSON.stringify( data.data ) );
+        },
+        error: ( err ) => {
+          console.error( err );
+        },
+        complete: () => { 
+          console.log('Inicio de sesion exitoso')
+          this.formData.reset();  // Limpia los campos del formulario
+        }
+      }); 
     }; 
-    this.authService.loginUser( inputData ).subscribe({
-      next: ( data ) => {
-        console.log( data );
-        localStorage.setItem('token', data.token! );
-        delete data.data?.password;
-        localStorage.setItem('authUser', JSON.stringify( data.data ) );
-      },
-      error: ( err ) => {
-        console.error( err );
-      },
-      complete: () => {
-        this.formData.reset();    // Limpia los campos del formulario
-      }
-    }); // Limpia los campos del formulario
+
+
   }
 }
