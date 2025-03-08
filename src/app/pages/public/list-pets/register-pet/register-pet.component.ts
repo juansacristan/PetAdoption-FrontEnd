@@ -1,6 +1,8 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PetService } from '../../../../services/pet.service';
+import { TypeAnimalService } from '../../../../services/type-animal.service';
 
 @Component({
   selector: 'app-register-pet',
@@ -14,7 +16,10 @@ export class RegisterPetComponent {
     typeanimals: String[] = ['Perro/a', 'Gato/a'];
     states: String[] = ['Vacunado', 'Esterilizado', 'Hospitalizado', 'Desparasitado', 'Entrenado'];
 
-    constructor(){
+    constructor(
+      private petService: PetService,
+      private typeanimalService: TypeAnimalService
+    ){
       this.formData = new FormGroup({
         name: new FormControl(
           '',
@@ -50,14 +55,39 @@ export class RegisterPetComponent {
         ),
       });
     }
+    ngOnInit(){
+      this.typeanimalService.getTypeAnimal().subscribe({
+        next:(data) => {
+          console.log(data);
+        },
+        error:(err) => {
+          console.log(err);
+        },
+        complete:() => {
+          console.log('Obtiene los tipos de animales exitosamente')
+        }
+      })
+    }
+
     onSubmit(){
       const inputData = this.formData.value;
   
-      if(this.formData.valid){
-        console.log(inputData)
+      if( this.formData.valid ) {
+        console.log( inputData );
+  
+        this.petService.createPet( inputData ).subscribe({
+          next: ( data ) => {
+            console.log( data );
+          },
+          error: ( err ) => {
+            console.error( err );
+          },
+          complete: () => {
+            console.log( 'Registro exitoso' );
+            this.formData.reset();    // Limpia los campos del formulario
+          } 
+        });
       }
-      
-      this.formData.reset();
-    }
+   }
 
 }

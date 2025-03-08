@@ -39,34 +39,38 @@
 
         <!-- Edad -->
         <div class="field input-grupo">
-            <label for="age">Edad*</label>
+            <!-- <label for="age">Edad*</label> -->
             <input type="number" formControlName="age" id="age" placeholder="Edad" class="form-input"/>
         </div>
 
         <!-- Genero -->
         <div class="field input-grupo">
-            <!-- <label for="gender">Genero*</label> -->
+            <label class="titulo-input" for="gender">Genero*</label>
             <!-- <input type="text" formControlName="gender" id="gender" placeholder="Ej: femenino" /> -->
-             <select formControlName="gender" id="gender">
-                <option value=""class="form-input">Selected...</option>
+             <select  class="form-input" formControlName="gender" id="gender" >
+                <option value="" >Selected...</option>
                 @for (gender of genders; track $index) {
                     <option [value]="gender">{{gender}}</option>
                 }
              </select>
         </div>
-        <div class="field">
-            <label for="typeanimal">Tipo de animal*</label>
+
+        <!-- Tipo de animal -->
+        <div class="field input-grupo">
+            <label class="titulo-input" for="typeanimal">Tipo de animal*</label>
             <!-- <input type="text" formControlName="typeanimal" id="typeanimal" placeholder="Ej: perro" /> -->
-             <select formControlName="typeanimal" id="typeanimal">
+             <select class="form-input" formControlName="typeanimal" id="typeanimal">
                 <option value="">Selected...</option>
                 @for (typeanimal of typeanimals; track $index) {
                     <option [value]="typeanimal">{{typeanimal}}</option>
                 }
              </select>
         </div>
-        <div class="field">
-            <label for="description">Description*</label>
-            <textarea formControlName="description" id="description" placeholder="Ej: golden retriever"></textarea>
+
+        <!-- Descripcion -->
+        <div class="field input-grupo">
+            <!-- <label for="description">Descripción*</label> -->
+            <textarea formControlName="description" id="description" placeholder="Descripción" class="form-input"></textarea>
         </div>
         <div class="error">
             @if (this.formData.get('description')?.invalid && (this.formData.get('description')?.dirty || this.formData.get('description')?.touched) ) {
@@ -75,23 +79,34 @@
                 }
             }
         </div>
-        <div class="field">
-            <label for="image">Subir la foto*</label>
-            <input type="file" formControlName="image" id="image" accept="image/*"/>
+
+        <!-- Subir imagen mascota -->
+        <div class="field input-grupo">
+            <!-- <label for="image">Subir la foto*</label> -->
+            <input type="file" formControlName="image" id="image" accept="image/*" class="form-input"/>
         </div>
-        <div class="field">
-            <label for="state">Estado*</label>
+
+        <!-- Estado -->
+        <div class="field input-grupo">
+            <label class="titulo-input" for="state">Estado*</label>
             <!-- <input type="text" formControlName="state" id="state" placeholder="Ej: femenino" /> -->
-             <select formControlName="state" id="state">
+             <select class="form-input" formControlName="state" id="state">
                 <option value="">Selected...</option>
                 @for (state of states; track $index) {
                     <option [value]="state">{{state}}</option>
                 }
              </select>
         </div>
+
         <div class="field">
-            <button type="submit" [disabled]="formData.invalid">Registro mascota</button>
+            <button class="submit" type="submit" [disabled]="formData.invalid">
+                <span class="btn-texto">Registro mascota</span>
+            </button>
         </div>
+        <div class="form-footer">
+            <a class="iniciar-sesion" href="#"> ¿Ya tienes una cuenta? <span >Iniciar sesión</span>
+            </a>
+          </div>
     </div>
 </div>
 </form>

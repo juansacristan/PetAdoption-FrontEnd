@@ -6,7 +6,6 @@
         <li><a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Admin</a></li>
         <!-- <li><a routerLink="/admin/users" routerLinkActive="active">Users</a></li> -->
         <li><a [routerLink]="['admin', 'users']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Usuarios</a></li>
-        <li><a [routerLink]="['admin', 'user','new']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Usuario-nuevo</a></li>
         <li><a [routerLink]="['admin', 'user','edit']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Usuario-editar</a></li>
         <li><a routerLink="/credits" routerLinkActive="active">Creditos</a></li>
         <li><a routerLink="/login" routerLinkActive="active">iniciar sesión usuario</a></li>
@@ -14,7 +13,6 @@
         <li><a routerLink="/pets" routerLinkActive="active">Listas mascotas</a></li>
         <li><a routerLink="/pet/new" routerLinkActive="active">Registrar mascotas</a></li>
         <li><a routerLink="/pet/edit" routerLinkActive="active">Editar mascotas</a></li>
-        <li><a routerLink="admin/pet/new" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Registrar admin mascotas</a></li>
         <li><a routerLink="admin/pet/edit" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Editar admin mascotas</a></li>
         <li><a routerLink="admin/pet/type" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Tipo de mascotas</a></li>
         <li><a [routerLink]="['admin', 'pet','type','new']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Registrar de tipo de mascota</a></li>
@@ -24,5 +22,8 @@
         <li><a routerLink="admin/event/list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Visulizar eventos de mascotas</a></li>
     </ul>
     <!-- <pre>{{user | json }}</pre> -->
-    <p>Hola, {{user.name}}</p>
+     @if( user ) {
+        <p>Hola, {{user.name}}</p>
+     }
+    
 </nav>

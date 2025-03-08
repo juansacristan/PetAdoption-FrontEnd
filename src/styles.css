@@ -14,7 +14,7 @@
     width: 350px;
     padding: 24px;
     margin: 10.5rem auto;
-    background: #f0f0f0;
+    background-color: #f0f0f0;
     border: 1px solid #E36B20;
     border-radius: 16px;
     box-shadow:
@@ -40,16 +40,26 @@
   .input-grupo {
     margin-bottom: 16px;
   }
+
+  .titulo-input {
+    align-items: center;
+    display: flex
+;
+    justify-content: center;
+    color: #E36B20;
+}
+
+
   
   .form-input {
-    width: 100%;
+    width: 80%;
     height: 40px;
-    padding: 0 35px;
+    padding: 0 20px;
     font-size: 14px;
     border: 1px solid #e2e8f0;
     border-radius: 10px;
     background: #f8fafc;
-    color: #1e293b;
+    color: black;
     transition: all 0.2s ease;
     display: flex;
     justify-self: center;
@@ -107,7 +117,7 @@
   }
   
   .iniciar-sesion:hover {
-    color: #1e293b;
+    color: #2f2f2f;
   }
   
   .iniciar-sesion:hover span {
