@@ -28,7 +28,7 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .form-titulo {
     font-size: 27px;
     font-weight: bold;
@@ -36,7 +36,7 @@
     margin: 0 0 24px;
     text-align: center;
   }
-  
+
   .input-grupo {
     margin-bottom: 16px;
   }
@@ -50,7 +50,7 @@
 }
 
 
-  
+
   .form-input {
     width: 80%;
     height: 40px;
@@ -64,11 +64,41 @@
     display: flex;
     justify-self: center;
   }
-  
+
+  label.titulo-input.fechaEvento {
+    margin-top: 14px;
+  }
+
+  label.titulo-input.horaInicio {
+    margin-top: 12px;
+  }
+
+  label.titulo-input.horaFinalizado {
+    margin-top: 12px;
+  }
+  input#place {
+    margin-top: 10px;
+  }
+
+  label.titulo-input.estado {
+    margin-top: 10px;
+  }
+
+  /* input#starTime{
+    padding-right: 100px;
+  }
+  input#timeOfCompletion{
+    padding-right: 100px;
+  } */
+
+  textarea#descripcion {
+    margin-top: 10px;
+  }
+
   .form-input::placeholder {
     color: #b3b3b3;
   }
-  
+
   .submit {
     position: relative;
     width: 100%;
@@ -83,53 +113,53 @@
     overflow: hidden;
     transition: all 0.2s ease;
   }
-  
+
   .form-footer {
     margin-top: 16px;
     text-align: center;
     font-size: 13px;
   }
-  
+
   .iniciar-sesion {
     color: #64748b;
     text-decoration: none;
     transition: all 0.2s ease;
   }
-  
+
   .iniciar-sesion span {
     color: #E36B20;
     font-weight: bold;
   }
-  
+
   /* Hover & Focus States */
   .form-input:hover {
     border-color: #cbd5e1;
   }
-  
-  
+
+
   .submit:hover {
     background: #b5591c;
     transform: translateY(-1px);
   }
-  
+
   .submit:hover {
     transform: translateY(-5%);
   }
-  
+
   .iniciar-sesion:hover {
     color: #2f2f2f;
   }
-  
+
   .iniciar-sesion:hover span {
     color: #b5591c;
   }
-  
+
   /* Estado de activado BTN */
   .submit:active {
     transform: translateY(0);
     box-shadow: none;
   }
-  
+
   /* Animación */
   @keyframes shake {
     0%,

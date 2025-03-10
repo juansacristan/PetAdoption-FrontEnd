@@ -3,14 +3,16 @@
     [formGroup]="formData"
     (ngSubmit)="onSubmit()"
 >
-    <h1>Login</h1>
+    <h1 class="form-titulo">Iniciar sesión</h1>
 
     <div> {{ this.formData.get('username')?.errors | json }} </div>
 
-    <div class="form-content">
+    <div class="form-content form-body">
         <div class="field">
-            <label for="username">Username*</label>
-            <input type="text" formControlName="username" id="username" placeholder="Ej: tucorreo@correo.com" />
+
+            <!-- Usuario -->
+            <!-- <label for="username">Usuario*</label> -->
+            <input class="form-input" type="text" formControlName="username" id="username" placeholder="Correo electronico" />
             <div class="error">
                 @if (this.formData.get('username')?.invalid && (this.formData.get('username')?.dirty || this.formData.get('username')?.touched) ) {
                     @if (this.formData.get('username')?.errors?.['required']) {
@@ -22,9 +24,11 @@
                 }
             </div>
         </div>
+
+        <!-- Contraseña -->
         <div class="field">
-            <label for="password">Password*</label>
-            <input type="password" formControlName="password" id="password" placeholder="Ej: Gbi754Mhcr4"/>
+            <!-- <label for="password">Contraseña*</label> -->
+            <input class="form-input" type="password" formControlName="password" id="password" placeholder="Contraseña"/>
         </div>
         <div class="error">
             @if (this.formData.get('password')?.invalid && (this.formData.get('password')?.dirty || this.formData.get('password')?.touched) ) {
@@ -40,8 +44,9 @@
             }
         </div>
         <div class="field">
-            <label for="">Username*</label>
-            <button type="submit">Login</button>
+            <button type="submit" class="submit">
+                <span class="btn-texto" >Iniciar sesión</span>
+            </button>
         </div>
     </div>
 </form>

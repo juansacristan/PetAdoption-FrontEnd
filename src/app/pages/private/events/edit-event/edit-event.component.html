@@ -3,50 +3,60 @@
     [formGroup]="formData" 
     (ngSubmit)="onSubmit()"
 >
-    <h1>edit-event</h1>
-    <div class="form-content">
+    <h1 class="form-titulo">Editar evento admin</h1>
+    <div class="form-content form-body">
+
+        <!-- Nombre de eventos -->
         <div class="field">
-            <label for="name">name of events *</label>
-            <input type="text" formControlName="name" id="name" placeholder="Ej: create name of the events" />
+            <!-- <label for="name">Nombre de evento *</label> -->
+            <input type="text" formControlName="name" id="name" placeholder="Crear nombre del evento" class="form-input"/>
         </div>
 
+        <!-- Fecha -->
         <div class="field">
-            <label for="date">date *</label>
-            <input type="date" formControlName="date" id="date" placeholder="Ej: create date of the events"/>
+            <label for="date" class="titulo-input fechaEvento">Crear fecha del evento *</label>
+            <input type="date" formControlName="date" id="date" placeholder="Crear fecha del evento" class="form-input"/>
         </div>
 
+        <!-- Inicio tiempo -->
         <div class="field">
-            <label for="starTime">start time *</label>
-            <input type="time" formControlName="starTime" id="starTime" placeholder="Ej: time start "/>
+            <label for="starTime" class="titulo-input horaInicio">Hora inicio *</label>
+            <input type="time" formControlName="starTime" id="starTime" placeholder="Ej: time start" class="form-input"/>
         </div>
 
+        <!-- Tiempo finalizado -->
         <div class="field">
-            <label for="timeOfCompletion">time of completion *</label>
-            <input type="time" formControlName="timeOfCompletion" id="timeOfCompletion" placeholder="Ej: time of completion "/>
+            <label for="timeOfCompletion" class="titulo-input horaFinalizado">Hora finzalizado *</label>
+            <input type="time" formControlName="timeOfCompletion" id="timeOfCompletion" placeholder="Ej: time of completion" class="form-input"/>
         </div>
 
+        <!-- Lugar -->
         <div class="field">
-            <label for="place">place *</label>
-            <input type="text" formControlName="place" id="place" placeholder="Ej: create place of event "/>
+            <!-- <label for="place" class="titulo-input">Lugar *</label> -->
+            <input type="text" formControlName="place" id="place" placeholder="Crear un sitio lugar" class="form-input"/>
         </div>
 
+        <!-- Descripcion -->
         <div class="field">
-            <label for="descripcion">descripcion *</label>
-            
-            <textarea formControlName="descripcion" id="descripcion" placeholder="Ej: event description"></textarea>
+            <!-- <label for="descripcion" class="titulo-input">descripción *</label> -->
+            <textarea formControlName="descripcion" id="descripcion" placeholder="Descripción del evento" class="form-input"></textarea>
         </div>
 
+        <!-- Estado -->
         <div class="field">
-            <label for="state">state *</label>
-            <select formControlName="state" id="state">
+            <label for="state" class="titulo-input estado">Estado *</label>
+            <select formControlName="state" id="state" class="form-input" >
                 <option value="">seleccione...</option>
                 <option value="true">activo</option>
                 <option value="false">inactivo</option>
             </select>
         </div>
-        
+
+        <!-- Boton -->
         <div class="field">
-            <button type="submit">edit-event</button>
+            <button class="submit" type="submit">
+                <span class="btn-texto">Crear</span>
+            </button>
         </div>
     </div>
 

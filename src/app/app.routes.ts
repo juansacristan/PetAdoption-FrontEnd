@@ -17,6 +17,7 @@ import { EditEventComponent } from './pages/private/events/edit-event/edit-event
 import { EventsComponent } from './pages/public/events/events.component';
 import { PetEditComponent } from './pages/public/list-pets/pet-edit/pet-edit.component';
 import { PetEditPrivateComponent } from './pages/private/pets/pet-edit-private/pet-edit-private.component';
+import { TypePetEditComponent } from './pages/private/type-pets/type-pet-edit/type-pet-edit.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -36,9 +37,11 @@ export const routes: Routes = [
     {path: 'admin/user/edit', component: UserEditComponent},
     {path: 'admin/pet/type', component: TypePetsComponent},
     {path: 'admin/pet/type/new', component: TypePetNewComponent},
+    {path: 'admin/pet/type/edit', component: TypePetEditComponent},
     { path: "admin/events", component: ListOfEventsComponent},  
     { path: "admin/event/new", component: CreateEventComponent},
     { path: "admin/event/edit", component: EditEventComponent},
+    { path: "admin/event/list", component: ListOfEventsComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full' },
     {path: '**', redirectTo: '404', pathMatch: 'full'}
 ];

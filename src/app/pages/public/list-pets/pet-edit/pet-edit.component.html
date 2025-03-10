@@ -82,7 +82,7 @@
 
         <!-- Subir imagen mascota -->
         <div class="field input-grupo">
-            <!-- <label for="image">Subir la foto*</label> -->
+            <label for="image" class="titulo-input">Subir la foto*</label>
             <input type="file" formControlName="image" id="image" accept="image/*" class="form-input"/>
         </div>
 
@@ -100,13 +100,9 @@
 
         <div class="field">
             <button class="submit" type="submit" [disabled]="formData.invalid">
-                <span class="btn-texto">Registro mascota</span>
+                <span class="btn-texto">Registrar peludo/a</span>
             </button>
         </div>
-        <div class="form-footer">
-            <a class="iniciar-sesion" href="#"> ¿Ya tienes una cuenta? <span >Iniciar sesión</span>
-            </a>
-          </div>
     </div>
 </div>
 </form>
