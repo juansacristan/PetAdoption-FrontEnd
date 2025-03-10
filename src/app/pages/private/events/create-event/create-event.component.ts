@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { state } from '@angular/animations';
+import { Component, input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { EventService } from '../../../../services/event.service';
 
 @Component({
   selector: 'app-create-event',
@@ -10,19 +12,33 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class CreateEventComponent {
   formData!: FormGroup
 
-  constructor () {
-    this.formData = new FormGroup ({
-      name: new FormControl(),
-      date: new FormControl(),
-      starTime: new FormControl(),
-      timeOfCompletion: new FormControl(),
-      place: new FormControl(),
-      descripcion: new FormControl()
-      
-    })
+  constructor ( private eventService: EventService) {
+      this.formData = new FormGroup ({
+        name: new FormControl(),
+        date: new FormControl(),
+        starttime: new FormControl(),
+        timeofcompletion: new FormControl(),
+        place: new FormControl(),
+        descripcion: new FormControl()
+      })
+    }
+    onSubmit () {
+      const inputData = this.formData.value;
+      console.log( this.formData.value);
+      if( this.formData.valid) {
+        console.log( inputData );
+        this.eventService.createEvent( inputData ).subscribe({
+          next: (data) => {
+            console.log( data );
+          },
+          error: (err) => {
+            console.log( err );
+          },
+          complete: () => {
+            console.log( 'Register product successfully' );
+            this.formData.reset();
+          }
+      });
+    }
   }
-onSubmit () {
-  console.log( this.formData.value);
-  this.formData.reset();
-}
-}
+  }
