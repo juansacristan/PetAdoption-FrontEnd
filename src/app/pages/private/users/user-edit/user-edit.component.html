@@ -3,16 +3,18 @@
     [formGroup]="formData"
     (ngSubmit)="onSubmit()"
 >
-    <h1>Editar usuario</h1>
+    <h1 class="form-titulo">Editar usuario</h1>
 
     <div> {{ this.formData.get('username')?.errors | json }} </div>
 
     <div class="form-container">
 
-    <div class="form-content">
+    <div class="form-content form-body">
+
+        <!-- Nombre -->
         <div class="field">
-            <label for="name">Name*</label>
-            <input type="text" formControlName="name" id="name" placeholder="Ej: Juan" />
+            <!-- <label for="name">Nombre completo*</label> -->
+            <input class="form-input" type="text" formControlName="name" id="name" placeholder="Nombre completo" />
         </div>
         <div class="error">
             @if (this.formData.get('name')?.invalid && (this.formData.get('name')?.dirty || this.formData.get('name')?.touched) ) {
@@ -21,17 +23,23 @@
                 }
             }
         </div>
-        <div class="field">
-            <label for="age">Age</label>
-            <input type="number" formControlName="age" id="age" placeholder="Ej: 31"/>
+
+        <!-- Edad -->
+        <div class="field input-grupo">
+            <!-- <label for="age">Age</label> -->
+            <input type="number" formControlName="age" id="age" placeholder="Edad" class="form-input"/>
         </div>
-        <div class="field">
-            <label for="addres">Addres</label>
-            <input type="text" formControlName="addres" id="addres" placeholder="Ej: Calle 00 # 00 - 00" />
+
+        <!-- Direccion -->
+        <div class="field input-grupo">
+            <!-- <label for="addres">Addres</label> -->
+            <input class="form-input" type="text" formControlName="addres" id="addres" placeholder="Dirección de residencial" />
         </div>
+
+        <!-- Celular -->
         <div class="field">
-            <label for="cellular">Cellular*</label>
-            <input type="number" formControlName="cellular" id="cellular" placeholder="Ej: 3102345678"/>
+            <!-- <label for="cellular">Cellular*</label> -->
+            <input class="form-input" type="number" formControlName="cellular" id="cellular" placeholder="Numero de celular"/>
         </div>
         <div class="error">
             @if (this.formData.get('cellular')?.invalid && (this.formData.get('cellular')?.dirty || this.formData.get('cellular')?.touched) ) {
@@ -46,19 +54,23 @@
                 }
             }
         </div>
-        <div class="field">
-            <label for="role">Role</label>
+
+        <!-- Rol -->
+        <div class="field input-grupo">
+            <label for="role" class="titulo-input">Rol</label>
             <!-- <input type="text" formControlName="role" id="role" placeholder="Ej: admin" /> -->
-             <select formControlName="role" id="role">
+             <select formControlName="role" id="role" class="form-input">
                 <option value="">Selected...</option>
                 @for (role of roles; track $index) {
                     <option [value]="role">{{role}}</option>
                 }
              </select>
         </div>
-        <div class="field">
-            <label for="username">Username*</label>
-            <input type="text" formControlName="username" id="username" placeholder="Ej: tucorreo@correo.com" />
+
+        <!-- Creear usuario -->
+        <div class="field input-grupo">
+            <!-- <label for="username">Username*</label> -->
+            <input class="form-input" type="text" formControlName="username" id="username" placeholder="Crear correo electronico" />
         </div>
         <div class="error">
             @if (this.formData.get('username')?.invalid && (this.formData.get('username')?.dirty || this.formData.get ('username')?.touched) ) {
@@ -67,9 +79,11 @@
                 }
             }
         </div>
-        <div class="field">
-            <label for="password">Password*</label>
-            <input type="password" formControlName="password" id="password" placeholder="Ej: Gbi754Mhcr4"/>
+
+        <!-- Contraseña -->
+        <div class="field input-grupo">
+            <!-- <label for="password">Password*</label> -->
+            <input class="form-input" type="password" formControlName="password" id="password" placeholder="Crear contraseña"/>
         </div>
         <div class="error">
             @if (this.formData.get('password')?.invalid && (this.formData.get('password')?.dirty || this.formData.get('password')?.touched) ) {
@@ -85,8 +99,14 @@
             }
         </div>
         <div class="field">
-            <button type="submit" [disabled]="formData.invalid">Register</button>
-            <button type="submit">Sign in to another account</button>
+            <button class="submit" type="submit" [disabled]="formData.invalid">
+                <span class="btn-texto">Registrar</span>
+            </button>
+            
+            <div class="form-footer">
+                <a class="iniciar-sesion" href="#"> ¿Ya tienes una cuenta? <span>Iniciar sesión</span>
+                </a>
+              </div>
         </div>
     </div>
 </div>
