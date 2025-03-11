@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PetService } from '../../../../services/pet.service';
 import { TypeAnimalService } from '../../../../services/type-animal.service';
+import { Typeanimal } from '../../../../interfaces/typeanimal';
 
 @Component({
   selector: 'app-register-pet',
@@ -13,7 +14,7 @@ import { TypeAnimalService } from '../../../../services/type-animal.service';
 export class RegisterPetComponent {
     formData!: FormGroup;
     genders: String[] = ['Macho', 'Femenino'];
-    typeanimals: String[] = ['Perro/a', 'Gato/a'];
+    typeanimals!: Typeanimal[];
     states: String[] = ['Vacunado', 'Esterilizado', 'Hospitalizado', 'Desparasitado', 'Entrenado'];
 
     constructor(
@@ -57,8 +58,9 @@ export class RegisterPetComponent {
     }
     ngOnInit(){
       this.typeanimalService.getTypeAnimal().subscribe({
-        next:(data) => {
+        next:(data: any) => {
           console.log(data);
+          this.typeanimals = data.data
         },
         error:(err) => {
           console.log(err);

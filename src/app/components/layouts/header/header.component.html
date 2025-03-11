@@ -1,10 +1,70 @@
-<nav>
+<header class="header">
+    <section class="header-top">
+        <div class="container header-top__content">
+            <ul class="menu-social">
+                <li class="item item-social">
+                    <a href="#" class="red-social-top" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li class="item item-social">
+                    <a href="#" class="red-social-top" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                </li>
+                <li class="item item-social">
+                    <a href="#" class="red-social-top" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+            </ul>
+            <h5>Síguenos nombre</h5>
+        </div>
+
+    </section>
+    <nav class="top-menu-nav container">
+        <ul class="menu menu-principal">
+            <li class="logo">
+                <a routerLink="home">
+                    <img class="logo-home"  src="assets/images/logo-pet.png" alt="logo pet">
+                </a> 
+
+            </li>
+            <li class="menu-item">
+                <a routerLink="/pets" href="#">Peludo</a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link" href="#">Historia</a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link" href="#">Nosotros</a>
+            </li>
+            <li class="menu-item">
+                <a routerLink="/events">Evento</a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link" href="#">Contacto</a>
+            </li>
+        </ul>
+        <div class="menu-usuario">
+            <a routerLink="/register" class="btn-home">Registrar</a>
+            <p class="btn-user">ó</p>
+            <a routerLink="/login" class="btn-home">Iniciar sesión</a>
+        </div>
+            <!-- <form class="menu-usuario-form">
+                <label class="label-usuario" for="usuario">usuario</label>
+                <select name="usuario" id="usuario" class="select-usuario">
+                    <option value="Registrar">Registrar</option>
+                    <option value="Iniciar sesion">Iniciar sesión</option>
+                </select>
+                <i class="fa-regular fa-user"></i>
+            </form>
+        </div> -->
+    </nav>
+</header>
+
+
+<!-- <nav>
     <a href="#">
         <img src="/assets/images/site-logo.png" alt="Site-logo: Logo pets adoption" class="site-logo">
     </a>
     <ul class="main-menu">
         <li><a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Admin</a></li>
-        <!-- <li><a routerLink="/admin/users" routerLinkActive="active">Users</a></li> -->
+        <li><a routerLink="/admin/users" routerLinkActive="active">Users</a></li>
         <li><a routerLink="/credits" routerLinkActive="active">Creditos</a></li>
         <li><a routerLink="/login" routerLinkActive="active">iniciar sesión usuario</a></li>
         <li><a routerLink="/register" routerLinkActive="active">Registrar usuario</a></li>
@@ -21,9 +81,9 @@
         <li><a routerLink="admin/event/edit" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Editar eventos de mascotas</a></li>
         <li><a routerLink="admin/event/new" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Registrar nuevos eventos mascotas</a></li>
     </ul>
-    <!-- <pre>{{user | json }}</pre> -->
+     <pre>{{user | json }}</pre>
     @if( user ) {
         <p>Hola, {{user.name}}</p>
     }
     
-</nav>
+</nav> -->

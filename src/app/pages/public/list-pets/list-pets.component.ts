@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PetService } from '../../../services/pet.service';
 
 @Component({
   selector: 'app-list-pets',
@@ -8,4 +9,19 @@ import { Component } from '@angular/core';
 })
 export class ListPetsComponent {
 
+  petService = inject(PetService);
+
+  ngOnInit(){
+    this.petService.getPets().subscribe({
+      next: (data) => {
+        console.log(data);
+      },
+      error: (error) => {
+        console.error(error);
+      },
+      complete: () => {
+        console.log('Obtuvo todos/as los/as peludos registrados/as')
+      }
+    })
+  }
 }

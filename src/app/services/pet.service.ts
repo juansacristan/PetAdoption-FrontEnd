@@ -16,6 +16,10 @@ export class PetService {
     const headers = new HttpHeaders().set('X-Token', token!)
     return this.http.post<Response<Pet>>('http://localhost:3000/api/pets', newPet, {headers});
   }
+
+  getPets(){
+    return this.http.get('http://localhost:3000/api/pets')
+  }
 }
 
 
