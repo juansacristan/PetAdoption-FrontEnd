@@ -59,7 +59,7 @@
         <div class="field input-grupo">
             <label class="titulo-input" for="typeanimal">Tipo de animal*</label>
             <!-- <input type="text" formControlName="typeanimal" id="typeanimal" placeholder="Ej: perro" /> -->
-             <select class="form-input" formControlName="typeanimal" id="typeanimal">
+             <select class="form-input" formControlName="typeAnimal" id="typeanimal">
                 <option value="">Selected...</option>
                 @for (typeanimal of typeanimals; track $index) {
                     <option [value]="typeanimal._id">{{typeanimal.name}}</option>
@@ -75,7 +75,7 @@
         <div class="error">
             @if (this.formData.get('description')?.invalid && (this.formData.get('description')?.dirty || this.formData.get('description')?.touched) ) {
                 @if (this.formData.get('description')?.errors?.['required']) {
-                    <span>El description es obligatorio</span>
+                    <span>La descripción es obligatorio</span>
                 }
             }
         </div>
@@ -83,7 +83,7 @@
         <!-- Subir imagen mascota -->
         <div class="field input-grupo">
             <!-- <label for="image">Subir la foto*</label> -->
-            <input type="file" formControlName="image" id="image" accept="image/*" class="form-input"/>
+            <input type="text" formControlName="urlImage" id="image"  class="form-input" placeholder="Colocar la imagen"/>
         </div>
 
         <!-- Estado -->

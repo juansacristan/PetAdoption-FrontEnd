@@ -34,14 +34,14 @@ export class RegisterPetComponent {
           [Validators.required]
         ),
         age: new FormControl(
-          '',
+          0,
           [Validators.required]
         ),
         gender: new FormControl(
           '',
           [Validators.required]
         ),
-        typeanimal: new FormControl(
+        typeAnimal: new FormControl(
           '',
           [Validators.required]
         ),
@@ -49,7 +49,7 @@ export class RegisterPetComponent {
           '',
           [Validators.required]
         ),
-        image: new FormControl(
+        urlImage: new FormControl(
           '',
           [Validators.required]
         ),

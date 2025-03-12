@@ -6,9 +6,36 @@
 }
 @else {
     @if (pets.length === 0) {
-        <p>No carga los peludos</p>
+        <div class="no-data">No caraga los peludos</div>
     }
     @else {
+        <table class="data-table">
+        <thead>
+            <tr>
+              <th>id</th>
+              <th>Nombre</th>
+              <th>Raza</th>
+              <th>Edad</th>
+              <th>Genero</th>
+              <th>Tipo de animal</th>
+              <th>Descripcion</th>
+              <th>Imagen</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for ( pet of pets; track pet._id ) {
+              <tr>
+                <td>{{ pet.name }}</td>
+                <td>{{ pet.description }}</td>
+                <td>
+                    <button>Editar</button>
+                    <button>Eliminar</button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
         <ul>
             @for (pet of pets; track $index) {
                 <li>{{pet.name}}</li>
