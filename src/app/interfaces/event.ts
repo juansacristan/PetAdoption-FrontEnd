@@ -5,5 +5,8 @@ export interface Event {
     timeOfCompletion: string;
     place: string;
     descripcion: string;
-    state: string;
+    state: Boolean;
+    _id?: string;
+    createAt?: string;
+    updateAt?: string;
 }

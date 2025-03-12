@@ -1,1 +1,30 @@
-<p>list-of-events works!</p>
+@if ( isLoading ) {
+    <div>Loading products...</div>
+  } @else {
+      @if ( event.length === 0) {
+        <div class="no-data">Don't have event.</div>
+      } @else {
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>event Name</th>
+              <th>event Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for ( event of event; track event._id ) {
+              <tr>
+                <td>{{ event.name }}</td>
+                <td>{{ event.descripcion }}</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      }
+  }
+  

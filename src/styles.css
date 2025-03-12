@@ -1,175 +1,116 @@
-/* You can add global styles to this file, and also import other style files */
+/* CSS: Forms */
+.form h1 {
+  text-align: center;
+}
 
 .form-content {
-    .error {
-        font-size: .8rem;
-        height: 1rem;
-        color: red;
-        font-style: italic;
-    }
+  border: 1px dotted;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 }
 
-.form {
-    position: relative;
-    width: 350px;
-    padding: 24px;
-    margin: 10.5rem auto;
-    background-color: #f0f0f0;
-    border: 1px solid #E36B20;
-    border-radius: 16px;
-    box-shadow:
-      0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -2px rgba(0, 0, 0, 0.05),;
-    font-family: "Montserrat", sans-serif;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.form-errors {
+  border: 1px dotted;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 
-  .form-titulo {
-    font-size: 27px;
-    font-weight: bold;
-    color: #E36B20;
-    margin: 0 0 24px;
-    text-align: center;
+  .title {
+      font-size: 1.2rem;
   }
-
-  .input-grupo {
-    margin-bottom: 16px;
-  }
-
-  .titulo-input {
-    align-items: center;
-    display: flex
-;
-    justify-content: center;
-    color: #E36B20;
 }
 
+.field {
+  display: flex;
+  flex-direction: column;
+  margin: .5rem 0;
+  width: 100%;
+}
 
+.error {
+  font-size: .75rem;
+  height: 1rem;
+  color: red;
+  font-style: italic;
+}
 
-  .form-input {
-    width: 80%;
-    height: 40px;
-    padding: 0 20px;
-    font-size: 14px;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    background: #f8fafc;
-    color: black;
-    transition: all 0.2s ease;
-    display: flex;
-    justify-self: center;
+/** CSS: Table */
+/** CSS: Forms */
+.form h1 {
+  text-align: center;
+}
+
+.form-content {
+  border: 1px dotted;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.form-errors {
+  border: 1px dotted;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+  .title {
+      font-size: 1.2rem;
   }
+}
 
-  label.titulo-input.fechaEvento {
-    margin-top: 14px;
-  }
+.field {
+  display: flex;
+  flex-direction: column;
+  margin: .5rem 0;
+  width: 100%;
+}
 
-  label.titulo-input.horaInicio {
-    margin-top: 12px;
-  }
+.error {
+  font-size: .75rem;
+  height: 1rem;
+  color: red;
+  font-style: italic;
+}
 
-  label.titulo-input.horaFinalizado {
-    margin-top: 12px;
-  }
-  input#place {
-    margin-top: 10px;
-  }
+/** CSS: Table */
+.data-table {
+width: 100%;
+border-collapse: collapse;
+}
 
-  label.titulo-input.estado {
-    margin-top: 10px;
-  }
+.data-table th, .data-table td {
+border: 1px solid #ddd;
+padding: 8px;
+text-align: left;
+}
 
-  /* input#starTime{
-    padding-right: 100px;
-  }
-  input#timeOfCompletion{
-    padding-right: 100px;
-  } */
+.data-table th {
+background-color: #f4f4f4;
+}
 
-  textarea#descripcion {
-    margin-top: 10px;
-  }
+.data-table tr:hover {
+background-color: #f9f9f9;
+}
 
-  .form-input::placeholder {
-    color: #b3b3b3;
-  }
+button {
+margin-right: 5px;
+padding: 5px 10px;
+cursor: pointer;
+}
 
-  .submit {
-    position: relative;
-    width: 100%;
-    height: 40px;
-    margin-top: 8px;
-    background: #E36B20;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 500;
-    overflow: hidden;
-    transition: all 0.2s ease;
-  }
-
-  .form-footer {
-    margin-top: 16px;
-    text-align: center;
-    font-size: 13px;
-  }
-
-  .iniciar-sesion {
-    color: #64748b;
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-
-  .iniciar-sesion span {
-    color: #E36B20;
-    font-weight: bold;
-  }
-
-  /* Hover & Focus States */
-  .form-input:hover {
-    border-color: #cbd5e1;
-  }
-
-
-  .submit:hover {
-    background: #b5591c;
-    transform: translateY(-1px);
-  }
-
-  .submit:hover {
-    transform: translateY(-5%);
-  }
-
-  .iniciar-sesion:hover {
-    color: #2f2f2f;
-  }
-
-  .iniciar-sesion:hover span {
-    color: #b5591c;
-  }
-
-  /* Estado de activado BTN */
-  .submit:active {
-    transform: translateY(0);
-    box-shadow: none;
-  }
-
-  /* Animación */
-  @keyframes shake {
-    0%,
-    100% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-4px);
-    }
-    75% {
-      transform: translateX(4px);
-    }
-  }
+button:hover {
+background-color: #ddd;
+}
