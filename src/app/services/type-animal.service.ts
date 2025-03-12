@@ -11,8 +11,8 @@ export class TypeAnimalService {
 
   constructor(private http: HttpClient ) { }
 
-  getTypeAnimal() : Observable<Response<Typeanimal>> {
-    return this.http.get<Response<Typeanimal>> ('http://localhost:3000/api/animals');
+  getTypeAnimal() : Observable<Response<Typeanimal[]>> {
+    return this.http.get<Response<Typeanimal[]>> ('http://localhost:3000/api/animals');
   }
 
     // createTypeAnimal(newTypeAnimal: Typeanimal){

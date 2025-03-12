@@ -62,7 +62,7 @@
              <select class="form-input" formControlName="typeanimal" id="typeanimal">
                 <option value="">Selected...</option>
                 @for (typeanimal of typeanimals; track $index) {
-                    <option [value]="typeanimal">{{typeanimal}}</option>
+                    <option [value]="typeanimal._id">{{typeanimal.name}}</option>
                 }
              </select>
         </div>

@@ -1,29 +1,18 @@
-<h1>Lista de peludos</h1>
+<h1>Lista de peludos/as</h1>
+<!-- <pre>{{pets | json}}</pre> -->
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Raza</th>
-            <th>Edad</th>
-            <th>Genero</th>
-            <th>Tipo de animal</th>
-            <th>Descripcion</th>
-            <th>imagen</th>
-            <th>Estado</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>1</th>
-            <th>1</th>
-            <th>1</th>
-            <th>Genero</th>
-            <th>Tipo de animal</th>
-            <th>Descripcion</th>
-            <th>imagen</th>
-            <th>Estado</th>
-        </tr>
-    </tbody>
-    <tfoot></tfoot>
-</table>
+@if (isLoading) {
+    <p>Cargando los peludos/as...</p>
+}
+@else {
+    @if (pets.length === 0) {
+        <p>No carga los peludos</p>
+    }
+    @else {
+        <ul>
+            @for (pet of pets; track $index) {
+                <li>{{pet.name}}</li>
+            }
+        </ul>
+    }
+}
