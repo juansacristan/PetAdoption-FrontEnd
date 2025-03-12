@@ -14,7 +14,6 @@ import { TypePetNewComponent } from './pages/private/type-pets/type-pet-new/type
 import { ListOfEventsComponent } from './pages/private/events/list-of-events/list-of-events.component';
 import { CreateEventComponent } from './pages/private/events/create-event/create-event.component';
 import { EditEventComponent } from './pages/private/events/edit-event/edit-event.component';
-
 import { PetEditComponent } from './pages/public/list-pets/pet-edit/pet-edit.component';
 import { PetEditPrivateComponent } from './pages/private/pets/pet-edit-private/pet-edit-private.component';
 import { TypePetEditComponent } from './pages/private/type-pets/type-pet-edit/type-pet-edit.component';

@@ -13,10 +13,17 @@ export class PetService {
 
   createPet(newPet: Pet): Observable<Response<Pet>>{
     const token = localStorage.getItem('token');
-    const headers = new HttpHeaders().set('X-Token', token!)
+    const headers = new HttpHeaders().set('X-Token', token!);
+
     return this.http.post<Response<Pet>>('http://localhost:3000/api/pets', newPet, {headers});
   }
+
+  getPets(): Observable<Response<Pet[]>> {
+    return this.http.get<Response<Pet[]>>('http://localhost:3000/api/pets')
+  }
 }
+
+
 
 
 

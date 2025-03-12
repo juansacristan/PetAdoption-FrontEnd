@@ -1,1 +1,18 @@
-<p>list-pets works!</p>
+<h1>Lista de peludos/as</h1>
+<!-- <pre>{{pets | json}}</pre> -->
+
+@if (isLoading) {
+    <p>Cargando los peludos/as...</p>
+}
+@else {
+    @if (pets.length === 0) {
+        <p>No carga los peludos</p>
+    }
+    @else {
+        <ul>
+            @for (pet of pets; track $index) {
+                <li>{{pet.name}}</li>
+            }
+        </ul>
+    }
+}
