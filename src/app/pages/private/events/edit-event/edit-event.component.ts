@@ -1,4 +1,3 @@
-import { state } from '@angular/animations';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
@@ -15,7 +14,7 @@ export class EditEventComponent {
     this.formData = new FormGroup ({
       name: new FormControl(),
       date: new FormControl(),
-      starTime: new FormControl(),
+      starttime: new FormControl(),
       timeOfCompletion: new FormControl(),
       place: new FormControl(),
       descripcion: new FormControl(),

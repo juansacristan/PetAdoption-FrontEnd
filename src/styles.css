@@ -1,40 +1,3 @@
-/** CSS: Table */
-.data-table {
-width: 100%;
-border-collapse: collapse;
-}
-
-.data-table th, .data-table td {
-border: 1px solid #ddd;
-padding: 8px;
-text-align: left;
-}
-
-.data-table th {
-background-color: #f4f4f4;
-}
-
-.data-table tr:hover {
-background-color: #f9f9f9;
-}
-
-button {
-margin-right: 5px;
-padding: 5px 10px;
-cursor: pointer;
-}
-
-button:hover {
-background-color: #ddd;
-}
-
-
-
-
-
-
-
-
 :root {
   --overall-font-size: 62.5%;
 }
@@ -709,103 +672,109 @@ img.nosotros-img {
 
 /* Formularios */
 .form-content {
-    .error {
-        font-size: .8rem;
-        height: 1rem;
-        color: red;
-        font-style: italic;
-    }
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 }
 
-.form {
-    position: relative;
-    width: 350px;
-    padding: 24px;
-    margin: 10.5rem auto;
-    background-color: #f0f0f0;
-    border: 1px solid #E36B20;
-    border-radius: 16px;
-    box-shadow:
-      0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -2px rgba(0, 0, 0, 0.05),;
-    font-family: "Montserrat", sans-serif;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.form-errors {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 
-  .form-titulo {
-    font-size: 27px;
-    font-weight: bold;
-    color: #E36B20;
-    margin: 0 0 24px;
-    text-align: center;
+  .title {
+      font-size: 1.2rem;
   }
-
-  .input-grupo {
-    margin-bottom: 16px;
-  }
-
-  .titulo-input {
-    align-items: center;
-    display: flex
-;
-    justify-content: center;
-    color: #E36B20;
 }
 
+.field {
+  display: flex;
+  flex-direction: column;
+  margin: .5rem 0;
+  width: 100%;
+}
 
+.error {
+  font-size: .75rem;
+  height: 1rem;
+  color: red;
+  font-style: italic;
+}
 
-  .form-input {
-    width: 80%;
-    height: 40px;
-    padding: 0 20px;
-    font-size: 14px;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    background: #f8fafc;
-    color: black;
-    transition: all 0.2s ease;
-    display: flex;
-    justify-self: center;
-  }
+/** CSS: Table */
+/** CSS: Forms */
+.form h1 {
+  text-align: center;
+}
 
-  label.titulo-input.fechaEvento {
-    margin-top: 14px;
-  }
+/* .form-content {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+} */
 
-  label.titulo-input.horaInicio {
-    margin-top: 12px;
-  }
+.form-errors {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 
-  label.titulo-input.horaFinalizado {
-    margin-top: 12px;
+  .title {
+      font-size: 1.2rem;
   }
-  input#place {
-    margin-top: 10px;
-  }
+}
 
-  label.titulo-input.estado {
-    margin-top: 10px;
-  }
+.field {
+  display: flex;
+  flex-direction: column;
+  margin: .5rem 0;
+  width: 100%;
+}
 
-  /* input#starTime{
-    padding-right: 100px;
-  }
-  input#timeOfCompletion{
-    padding-right: 100px;
-  } */
+.error {
+  font-size: .75rem;
+  height: 1rem;
+  color: red;
+  font-style: italic;
+}
 
-  textarea#descripcion {
-    margin-top: 10px;
-  }
+/** CSS: Table */
+.data-table {
+width: 100%;
+border-collapse: collapse;
+}
 
-  .form-input::placeholder {
-    color: #b3b3b3;
-  }
+.data-table th, .data-table td {
+border: 1px solid #ddd;
+padding: 8px;
+text-align: left;
+}
+
+.data-table th {
+background-color: #f4f4f4;
+}
+
+.data-table tr:hover {
+background-color: #f9f9f9;
+}
+
+button {
+margin-right: 5px;
+padding: 5px 10px;
+cursor: pointer;
+}
+
 
   .submit {
     position: relative;
@@ -912,3 +881,4 @@ img.nosotros-img {
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
+

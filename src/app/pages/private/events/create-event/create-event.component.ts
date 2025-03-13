@@ -1,7 +1,7 @@
-import { state } from '@angular/animations';
 import { Component, input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { EventService } from '../../../../services/event.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-event',
@@ -12,14 +12,15 @@ import { EventService } from '../../../../services/event.service';
 export class CreateEventComponent {
   formData!: FormGroup
 
-  constructor ( private eventService: EventService) {
+  constructor ( private eventService: EventService, private router: Router) {
       this.formData = new FormGroup ({
         name: new FormControl(),
         date: new FormControl(),
         starttime: new FormControl(),
         timeofcompletion: new FormControl(),
         place: new FormControl(),
-        descripcion: new FormControl()
+        descripcion: new FormControl(),
+        state: new FormControl()
       })
     }
     onSubmit () {
@@ -37,6 +38,7 @@ export class CreateEventComponent {
           complete: () => {
             console.log( 'Register product successfully' );
             this.formData.reset();
+            this.router.navigate(['/events']);
           }
       });
     }
