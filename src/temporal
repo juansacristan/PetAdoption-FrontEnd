@@ -1,0 +1,75 @@
+/* Formularios */
+.form-content {
+  border: 1px dotted;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.form-errors {
+  border: 1px dotted;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+  .title {
+      font-size: 1.2rem;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin: .5rem 0;
+  width: 100%;
+}
+
+.error {
+  font-size: .75rem;
+  height: 1rem;
+  color: red;
+  font-style: italic;
+}
+
+
+
+
+/** CSS: Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.data-table th {
+background-color: #f4f4f4;
+}
+
+.data-table tr:hover {
+background-color: #f9f9f9;
+}
+.image-table{
+  max-width: 6rem;
+  border-radius: 6rem   ;
+}
+
+button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+background-color: #ddd;
+}

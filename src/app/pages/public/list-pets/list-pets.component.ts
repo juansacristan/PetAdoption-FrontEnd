@@ -39,4 +39,27 @@ export class ListPetsComponent {
       }
     })
   }
+
+  onRemove(id: string){
+
+    if(!id){
+      console.error('Id de peludo/a invalido/a');
+      return;
+    }
+
+    this.petService.deletePetById(id).subscribe({
+      next:(data) => {
+        console.log(data);
+        console.log(`Peludo/a ${id} eliminado/a exitosamente`);
+      },
+      error: (err) => {
+        console.error(err);
+      },
+      complete: () => {
+        
+      }
+    })
+
+    console.log('Elimina peludo/a con Id: ' + id)
+  }
 }
