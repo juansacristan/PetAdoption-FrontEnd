@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { PetService } from '../../../services/pet.service';
 import { Pet } from '../../../interfaces/pet';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-list-pets',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './list-pets.component.html',
   styleUrl: './list-pets.component.css'
 })

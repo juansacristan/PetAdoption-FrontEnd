@@ -30,6 +30,10 @@ export class PetService {
     return this.http.delete<Response<Pet>>(`http://localhost:3000/api/pets/${id}`, {headers: this.headers});
   }
 
+  getPetById(id: string) : Observable<Response<Pet>>{
+    return this.http.get<Response<Pet>>('http://localhost:3000/api/pets/' + id);
+  }
+
 }
 
 

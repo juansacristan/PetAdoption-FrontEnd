@@ -31,7 +31,7 @@ export const routes: Routes = [
     {path: 'pet/edit', component: PetEditComponent},
     {path: 'admin/users', component: UsersComponent},
     {path: 'admin/pet/new', component: RegisterPetComponent},
-    {path: 'admin/pet/edit', component: PetEditPrivateComponent},
+    {path: 'admin/pet/edit/:id', component: PetEditPrivateComponent},
     {path: 'admin/user/new', component: RegisterComponent},
     {path: 'admin/user/edit', component: UserEditComponent},
     {path: 'admin/pet/type', component: TypePetsComponent},

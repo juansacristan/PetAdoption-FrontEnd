@@ -1,7 +1,6 @@
-<h1>Lista de peludos/as</h1>
 <!-- <pre>{{pets | json}}</pre> -->
 
-@if (isLoading) {
+<!-- @if (isLoading) {
     <p>Cargando los peludos/as...</p>
 }
 @else {
@@ -9,7 +8,62 @@
         <div class="no-data">No caraga los peludos</div>
     }
     @else {
-        <!-- <table class="data-table">
+        <div class="cards">
+          @for ( pet of pets; track pet._id ) {
+            <div class="card">
+              <img class="card-image" [src]="pet.urlImage" [alt]="pet.name">
+              <div class="card-container">
+                <h4>{{ pet.name }}</h4>
+                <p>{{ pet.race }}</p>
+                <p>{{ pet.gender }}</p>
+                <td>
+
+                  /admin/pet/edit
+                    <a [routerLink]="['/admin','pet','edit', pet._id]">Editar</a>
+                    <button (click)="onRemove(pet._id ??'')" >Eliminar</button>
+                </td>
+              </div>
+            </div>
+        }
+      </div>
+    }
+} -->
+
+
+
+
+<h1>Lista de peludos/as</h1>
+
+@if (isLoading) {
+  <p>Cargando los peludos/as...</p>
+}
+@else {
+  @if (pets.length === 0) {
+      <div class="no-data">No caraga los peludos</div>
+  }
+  @else{
+
+      <div class="list-card">
+        @for ( pet of pets; track pet._id ) {
+          <div class="card">
+            <div class="">
+              <img class="card-image" [src]="pet.urlImage" [alt]="pet.name">
+            </div>
+            <p class="card-type">{{ pet.typeAnimal }}</p>
+            <h4 class="card-name">{{ pet.name }}</h4>
+            <p class ="card-gender">{{ pet.gender }}</p>
+            <p class="card-race"> {{ pet.race }}</p>
+            <button class="btn-card">Ver más</button>
+          </div>
+        }
+      </div>
+    }
+}
+
+
+
+
+          <!-- <table class="data-table">
         <thead>
             <tr>
               <th>Imagen</th>
@@ -46,18 +100,3 @@
             }
           </tbody>
         </table> -->
-
-        <div class="cards">
-          @for ( pet of pets; track pet._id ) {
-            <div class="card">
-              <img class="card-image" [src]="pet.urlImage" [alt]="pet.name">
-              <div class="card-container">
-                <h4>{{ pet.name }}</h4>
-                <p>{{ pet.race }}</p>
-                <p>{{ pet.gender }}</p>
-              </div>
-            </div>
-        }
-      </div>
-    }
-}

@@ -881,9 +881,89 @@
         transform: translateX(4px);
       }
     }
+
+     /* Cards */
+    .list-card{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    
+    .card {
+      padding: 20px;
+      width: 330px;
+      min-height: 370px;
+      border-radius: 20px;
+      background-color: white;
+      transition: 0.4s;
+      position: relative;
+      border: 1px solid #E36B20;
+    
+    }
+    
+    .card:hover {
+      translate: 0 -10px;
+    
+    }
+    .card-type {
+      font-size: 12px;
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      background-color: #E36B20;
+      color:white;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+    .card-name {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0 0 10px;
+    }
+    
+    .card-image {
+      max-width: 100%;
+      width: 100%;
+      height: 22rem;
+      object-fit: cover;
+      background-color: #c9c9c9;
+      border-radius: 15px;
+    }
+    
+    .card-race {
+      margin: 13px 0 0 10px;
+      color: rgb(31, 31, 31);
+      font-size: 18px;
+    }
+    
+    .card-gender{
+      font-size: 13px;
+      background-color: #E36B20;
+      color: white;
+      padding: 3px 10px;
+      border-radius: .4rem;
+      margin: 1px 230px 0px 7px;
+    }
+
+    .btn-card {
+      width: 100%;
+      margin-top: 15px;
+      background-color: #E36B20;
+      border: none;
+      padding: 8px 8px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+    }
   
+
+
+
+    
     /** Cards */
-    .cards {
+    /* .cards {
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -892,7 +972,7 @@
   }
   
     .card {
-      /* Add shadows to create the "card" effect */
+      Add shadows to create the "card" effect
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
       transition: 0.3s;
       max-width: 30%;
@@ -908,7 +988,7 @@
       border-radius: .6rem .6rem 0 0;
   }
     
-    /* On mouse-over, add a deeper shadow */
+    On mouse-over, add a deeper shadow
     .card:hover {
       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    }
+    } */
