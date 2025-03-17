@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { PetService } from '../../../services/pet.service';
 import { Pet } from '../../../interfaces/pet';
 import { RouterLink } from '@angular/router';

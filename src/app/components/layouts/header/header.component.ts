@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink} from '@angular/router';
+import { Router, RouterLink} from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 
 
@@ -11,9 +11,29 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class HeaderComponent {
 
-  constructor(private authservice: AuthService){}
+  constructor(
+    private authservice: AuthService,
+    private router: Router
+  ){}
 
   get user () {
     return this.authservice.user;
   }
+
+  logout(){
+    this.authservice.logoutUser().subscribe({
+      next:(data) => {
+        console.log(data);
+
+        this.router.navigateByUrl('/login')
+      },
+      error:(err) => {
+        console.error(err);
+      },
+      complete:() => {
+        console.log('Se ejecuta el Logout');
+      }
+    })
+  }
+
 }

@@ -17,7 +17,11 @@ export class PetService {
     this.headers = new HttpHeaders().set('X-Token', this.token!);
   }
 
-  createPet(newPet: Pet): Observable<Response<Pet>>{
+  createPetPublic(newPet: Pet): Observable<Response<Pet>>{
+    return this.http.post<Response<Pet>>('http://localhost:3000/api/pets/public', newPet);
+  }
+
+  createPetPrivate(newPet: Pet): Observable<Response<Pet>>{
     return this.http.post<Response<Pet>>('http://localhost:3000/api/pets', newPet, {headers: this.headers});
   }
 
@@ -32,6 +36,10 @@ export class PetService {
 
   getPetById(id: string) : Observable<Response<Pet>>{
     return this.http.get<Response<Pet>>('http://localhost:3000/api/pets/' + id);
+  }
+
+  uptadePetById(id:string, uptadePet: Pet): Observable<Response<Pet>>{
+    return this.http.patch<Response<Pet>>(`http://localhost:3000/api/pets/${id}`, uptadePet, {headers: this.headers});
   }
 
 }

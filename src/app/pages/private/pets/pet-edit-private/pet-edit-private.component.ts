@@ -1,8 +1,10 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PetService } from '../../../../services/pet.service';
+import { TypeAnimalService } from '../../../../services/type-animal.service';
+import { Typeanimal } from '../../../../interfaces/typeanimal';
 import { Pet } from '../../../../interfaces/pet';
 
 @Component({
@@ -14,32 +16,37 @@ import { Pet } from '../../../../interfaces/pet';
 export class PetEditPrivateComponent {
       formData!: FormGroup; //
       petId!: string;       //Guardar el Id de la ruta
-      petData!: Pet;        //Guardar los datos del peludo por Id
+      petData!: Pet;
+      typeanimals!: Typeanimal[];
       genders: String[] = ['Macho', 'Femenino'];
-      typeanimals: String[] = ['Perro/a', 'Gato/a'];
       states: String[] = ['Vacunado', 'Esterilizado', 'Hospitalizado', 'Desparasitado', 'Entrenado'];
   
       constructor(
         private route: ActivatedRoute,
-        private petService: PetService
+        private petService: PetService,
+        private typeanimalService: TypeAnimalService,
+        private router: Router
       ){
         this.formData = new FormGroup({
           name: new FormControl('', [Validators.required]),
           race: new FormControl('', [Validators.required]),
           age: new FormControl('', [Validators.required]),
           gender: new FormControl('', [Validators.required]),
-          typeanimal: new FormControl('', [Validators.required]),
+          typeAnimal: new FormControl('', [Validators.required]),
           description: new FormControl('', [Validators.required]),
-          image: new FormControl('', [Validators.required]),
+          urlImage: new FormControl('', [Validators.required]),
           state: new FormControl('', [Validators.required]),
         });
       }
 
       
       ngOnInit(){
+        this.getTypeAnimal();
         this.getParamId();
         this.getFormData();
-        this.setFormData();
+        
+      
+
         // Obtenemos el Id de la ruta parametrizada
         // this.route.params.subscribe({
         //   next:(data) => {
@@ -70,9 +77,19 @@ export class PetEditPrivateComponent {
       getFormData(){
         this.petService.getPetById( this.petId ).subscribe({
           next: (data) => {
-            console.log(data.data);
+            this.petData = data.data !;
+                  // Aqui se guardan los datos del peludos por Id
+                  this.formData.patchValue({
+                    name: data.data?.name,
+                    race: data.data?.race,
+                    age: data.data?.age,
+                    gender: data.data?.gender,
+                    typeAnimal: data.data?.typeAnimal,
+                    description: data.data?.description,
+                    urlImage: data.data?.urlImage,
+                    state: data.data?.state
 
-            this.petData = data.data!;        // Aqui se guardan los datos del peludos por Id
+                  })
           
           },
           error:(err) => {
@@ -82,16 +99,16 @@ export class PetEditPrivateComponent {
         });
       }
 
-      setFormData(){
-        this.formData.setValue({
-          name: this.petData.name,
-          race: this.petData.race,
-          age: this.petData.age,
-          gender: this.petData.gender,
-          typeanimal: this.petData.typeAnimal,
-          description: this.petData.description,
-          image: this.petData.urlImage,
-          state: this.petData.state,
+      getTypeAnimal(){
+        this.typeanimalService.getTypeAnimal().subscribe({
+          next:(data) => {
+            console.log(data);        // data ==> {ok; true, data: []}
+            this.typeanimals = data.data ?? [];
+          },
+          error: (err) => {
+            console.error(err)
+          },
+          complete: () => {}
         })
       }
 
@@ -99,10 +116,19 @@ export class PetEditPrivateComponent {
         const inputData = this.formData.value;
     
         if(this.formData.valid){
-          console.log(inputData)
+          console.log(inputData);
         }
         
-        this.formData.reset();
+        this.petService.uptadePetById(this.petId, inputData).subscribe({
+          next: (data) => {
+            console.log(data);
+            this.router.navigateByUrl('admin/pet')
+          },
+          error: (err) => {
+            console.error(err)
+          },
+          complete: () => {},
+        })
       }
   
 }

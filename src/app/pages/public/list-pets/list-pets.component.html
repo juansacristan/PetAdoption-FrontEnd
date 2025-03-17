@@ -32,28 +32,37 @@
 
 
 
-<h1>Lista de peludos/as</h1>
+<h1 class="header-titulo container">Peludos/as</h1>
+
+
 
 @if (isLoading) {
   <p>Cargando los peludos/as...</p>
 }
 @else {
   @if (pets.length === 0) {
-      <div class="no-data">No caraga los peludos</div>
+      <div class="no-data">No carga los peludos</div>
   }
   @else{
-
       <div class="list-card">
+         <!-- Card Registrar -->
+        <div class="card card-register">
+          <img class="card-image" src="assets/images/image-register.jpg" alt="registrar peludo/a">
+          <a class="btn-card btn-register" routerLink="/pet/new">Registrar</a>
+        </div>
         @for ( pet of pets; track pet._id ) {
           <div class="card">
-            <div class="">
-              <img class="card-image" [src]="pet.urlImage" [alt]="pet.name">
-            </div>
+              @if(!pet.urlImage){
+                <img class="card-image" src="assets/images/image-not-found-01.jpg" alt="no se encontró la imagen solicitada">
+              }
+              @else {
+                <img class="card-image" [src]="pet.urlImage" [alt]="pet.name">
+              }
             <p class="card-type">{{ pet.typeAnimal }}</p>
             <h4 class="card-name">{{ pet.name }}</h4>
             <p class ="card-gender">{{ pet.gender }}</p>
             <p class="card-race"> {{ pet.race }}</p>
-            <button class="btn-card">Ver más</button>
+              <a class="btn-card" [routerLink]="['/pet/', pet._id]">Ver más</a>
           </div>
         }
       </div>

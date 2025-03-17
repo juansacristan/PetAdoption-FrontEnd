@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: './register-pet.component.html',
   styleUrl: './register-pet.component.css'
 })
-export class RegisterPetPublicComponent {
+export class RegisterPetComponent {
 
     formData!: FormGroup;
     genders: String[] = ['Macho', 'Femenino'];
@@ -50,7 +50,8 @@ export class RegisterPetPublicComponent {
           [Validators.required]
         ),
         urlImage: new FormControl(
-          ''
+          '',
+          [Validators.required]
         ),
         state: new FormControl(
           '',
@@ -83,7 +84,7 @@ export class RegisterPetPublicComponent {
       if( this.formData.valid ) {
         console.log( inputData );
   
-        this.petService.createPetPublic( inputData ).subscribe({
+        this.petService.createPetPrivate( inputData ).subscribe({
           next: ( data ) => {
             console.log( data );
           },

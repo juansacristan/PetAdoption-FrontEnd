@@ -59,10 +59,10 @@
         <div class="field input-grupo">
             <label class="titulo-input" for="typeanimal">Tipo de animal*</label>
             <!-- <input type="text" formControlName="typeanimal" id="typeanimal" placeholder="Ej: perro" /> -->
-             <select class="form-input" formControlName="typeanimal" id="typeanimal">
+             <select class="form-input" formControlName="typeAnimal" id="typeanimal">
                 <option value="">Selected...</option>
                 @for (typeanimal of typeanimals; track $index) {
-                    <option [value]="typeanimal">{{typeanimal}}</option>
+                    <option [value]="typeanimal._id">{{typeanimal.name}}</option>
                 }
              </select>
         </div>
@@ -82,8 +82,17 @@
 
         <!-- Subir imagen mascota -->
         <div class="field input-grupo">
-            <label for="image" class="titulo-input">Subir la foto*</label>
-            <input type="file" formControlName="image" id="image" accept="image/*" class="form-input"/>
+            <!-- <label for="image">Subir la foto*</label> -->
+            <input type="text" formControlName="urlImage" id="image"  class="form-input" placeholder="Colocar la imagen"/>
+
+            <div class="card card-pet-register">
+                @if(!petData.urlImage){
+                  <img class="card-image" src="assets/images/image-not-found-01.jpg" alt="no se encontró la imagen solicitada">
+                }
+                @else {
+                  <img class="card-image" [src]="petData.urlImage" [alt]="petData.name">
+                }
+            </div>
         </div>
 
         <!-- Estado -->
@@ -100,7 +109,7 @@
 
         <div class="field">
             <button class="submit" type="submit" [disabled]="formData.invalid">
-                <span class="btn-texto">Registrar peludo/a</span>
+                <span class="btn-texto">Cambiar</span>
             </button>
         </div>
     </div>

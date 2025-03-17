@@ -1,0 +1,106 @@
+<!-- <pre>{{pets | json}}</pre> -->
+
+<!-- @if (isLoading) {
+    <p>Cargando los peludos/as...</p>
+}
+@else {
+    @if (pets.length === 0) {
+        <div class="no-data">No caraga los peludos</div>
+    }
+    @else {
+        <div class="cards">
+          @for ( pet of pets; track pet._id ) {
+            <div class="card">
+              <img class="card-image" [src]="pet.urlImage" [alt]="pet.name">
+              <div class="card-container">
+                <h4>{{ pet.name }}</h4>
+                <p>{{ pet.race }}</p>
+                <p>{{ pet.gender }}</p>
+                <td>
+
+                  /admin/pet/edit
+                    <a [routerLink]="['/admin','pet','edit', pet._id]">Editar</a>
+                    <button (click)="onRemove(pet._id ??'')" >Eliminar</button>
+                </td>
+              </div>
+            </div>
+        }
+      </div>
+    }
+} -->
+
+
+
+
+<h1 class="header-titulo container">Lista de peludos/as</h1>
+
+@if (isLoading) {
+  <p>Cargando los peludos/as...</p>
+}
+@else {
+  @if (pets.length === 0) {
+      <div class="no-data">No carga los peludos</div>
+  }
+  @else{
+
+      <div class="list-card">
+        @for ( pet of pets; track pet._id ) {
+          <div class="card">
+            @if(!pet.urlImage){
+              <img class="card-image" src="assets/images/image-not-found-01.jpg" alt="no se encontró la imagen solicitada">
+            }
+            @else {
+              <img class="card-image" [src]="pet.urlImage" [alt]="pet.name">
+            }
+            <p class="card-type">{{ pet.typeAnimal }}</p>
+            <h4 class="card-name">{{ pet.name }}</h4>
+            <p class ="card-gender">{{ pet.gender }}</p>
+            <p class="card-race"> {{ pet.race }}</p>
+              <a class="btn-card" [routerLink]="['/admin','pet','edit', pet._id]">Editar</a>
+              <button class="btn-card" (click)="onRemove(pet._id ??'')" >Eliminar</button>
+          </div>
+        }
+      </div>
+    }
+}
+
+
+
+
+          <!-- <table class="data-table">
+        <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Raza</th>
+              <th>Edad</th>
+              <th>Genero</th>
+              <th>Tipo de animal</th>
+              <th>Descripcion</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for ( pet of pets; track pet._id ) {
+              <tr>
+                <td>
+                  @if(!pet.urlImage){
+                    <img class="image-table" src="assets/images/image-not-found.png" alt="no se encontró la imagen solicitada">
+                  }
+                  <img class="image-table" [src]="pet.urlImage" [alt]="pet.name" [title]="pet.name">
+                </td>
+                <td>{{ pet.name }}</td>
+                <td>{{ pet.race }}</td>
+                <td>{{ pet.age }}</td>
+                <td>{{ pet.gender }}</td>
+                <td>{{ pet.typeAnimal }}</td>
+                <td>{{ pet.description }}</td>
+                <td>{{ pet.state }}</td>
+                <td>
+                    <button>Editar</button>
+                    <button (click)="onRemove(pet._id ??'')" >Eliminar</button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table> -->
