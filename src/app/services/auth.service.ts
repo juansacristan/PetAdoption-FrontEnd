@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
 import { Response } from '../interfaces/response'
@@ -39,6 +39,15 @@ export class AuthService {
     }
 
     return of(false);           // Usuario no esta logueado  -of: Es la forma de envolver un valor para retornar un Observable de tipo boolean
+  }
+
+  verifyAuthenticateUser(): Observable<Response<User>> {
+    return this.http.get<Response<User>>( 'http://localhost:3000/api/auth/login/re-new-token', {headers: this.getHeaders()})
+  }
+
+  getHeaders(){
+        const token = localStorage.getItem('token')??'';
+        return new HttpHeaders().set('X-Token', token!);
   }
 
 }

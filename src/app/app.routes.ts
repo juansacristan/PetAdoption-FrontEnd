@@ -18,13 +18,16 @@ import { EditEventComponent } from './pages/private/events/edit-event/edit-event
 import { PetEditPrivateComponent } from './pages/private/pets/pet-edit-private/pet-edit-private.component';
 import { TypePetEditComponent } from './pages/private/type-pets/type-pet-edit/type-pet-edit.component';
 import { PetsComponent } from './pages/private/pets/pets.component';
+import { NosotrosComponent } from './pages/public/nosotros/nosotros.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'credits', component: CreditsComponent},
-    {path: 'admin', component: DashboardComponent},
+    {path: 'admin', component: DashboardComponent, canActivate: [authGuard]},
+    {path: 'about-us', component: NosotrosComponent},
     {path: '404', component: PageNotFoundComponent},
     {path: 'list-pets', component: ListPetsComponent},
     {path: "events", component: ListOfEventsComponent},

@@ -543,6 +543,37 @@
     box-sizing: border-box;
     width: 100%;
   }
+
+
+  /* Enlace Nosotros */
+  .header-tema {
+    background-color: #F8F8F8;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.header-container {
+    display: flex
+;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5rem;
+    margin-left: 20rem;
+}
+
+.titulo-header {
+    font-size: 4.5rem;
+    margin: 1rem 0 2rem 0;
+}
+.figura-header{
+    width: 100%;
+    background-color: #E36B20;
+    padding: 11rem 0 11rem 0;
+    border-radius: 15rem 0 0 15rem;
+}
+
+/* Fin de enlace Nosotros */
   
   /** 567px --> 767px */
   @media (min-width: 567px) {
