@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
 import { Response } from '../interfaces/response'
-import { Observable, of } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,12 @@ export class AuthService {
       this.authUser = JSON.parse(authUser);
     }
     return this.authUser;
+  }
+
+  private getHeaders(): HttpHeaders {
+    const token = localStorage.getItem('token') ?? '';
+    return new HttpHeaders().set('X-Token', token);
+    
   }
 
   registerUser( newUser: User ) : Observable<Response<User>> {
@@ -41,13 +47,22 @@ export class AuthService {
     return of(false);           // Usuario no esta logueado  -of: Es la forma de envolver un valor para retornar un Observable de tipo boolean
   }
 
-  verifyAuthenticateUser(): Observable<Response<User>> {
-    return this.http.get<Response<User>>( 'http://localhost:3000/api/auth/login/re-new-token', {headers: this.getHeaders()})
-  }
+  verifyAuthenticateUser():any{
+    return this.http.get( 'http://localhost:3000/api/auth/re-new-token', {headers: this.getHeaders()})
+    .pipe(
+      tap((data) =>  {
+        console.log(data);
+      }),
+      map((data:any) => {
+        console.log('verifyAuthenticatedUser', !!data.data);
 
-  getHeaders(){
-        const token = localStorage.getItem('token')??'';
-        return new HttpHeaders().set('X-Token', token!);
+        return !!data.data;
+      }),
+      catchError((err) => {
+        console.error(err);
+        return of(false)
+      })
+    );
   }
 
 }
