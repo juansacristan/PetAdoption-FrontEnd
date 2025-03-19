@@ -42,7 +42,7 @@ export class LoginComponent {
           delete data.data?.password;
           localStorage.setItem('authUser', JSON.stringify( data.data ) );
 
-          this.router.navigateByUrl('admin');
+          this.router.navigateByUrl('/admin');
 
         },
         error: ( err ) => {
