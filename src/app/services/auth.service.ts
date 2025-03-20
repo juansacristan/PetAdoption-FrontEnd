@@ -14,10 +14,13 @@ export class AuthService {
 
   //Getter
   get user(): User | null{
-    const authUser = localStorage.getItem('authUser');
-    if(authUser){
-      this.authUser = JSON.parse(authUser);
+    const authUser = localStorage.getItem( 'authUser' ) ;
+    console.log( authUser );
+    if( authUser ){
+      this.authUser = JSON.parse( authUser );
+      console.log(this.authUser)
     }
+
     return this.authUser;
   }
 
@@ -36,6 +39,9 @@ export class AuthService {
   }
 
   logoutUser() : Observable<boolean>{
+    this.user;   // TODO: Mejorar la carga de los datos de authUser que estan atadas al Getter
+    
+    console.log( this.authUser );
     if(this.authUser){
       this.authUser = null;                     // Eliminar los datos del usuario autenticado atributo de clase
       localStorage.removeItem('token');

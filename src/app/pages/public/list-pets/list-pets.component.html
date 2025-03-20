@@ -51,6 +51,8 @@
           <img class="card-image" src="assets/images/image-register.jpg" alt="registrar peludo/a">
           <a class="btn-card btn-register" routerLink="/pet/new">Registrar</a>
         </div>
+          <!-- Fin Card Registrar -->
+           
         @for ( pet of pets; track pet._id ) {
           <div class="card">
               @if(!pet.urlImage){

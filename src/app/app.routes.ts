@@ -20,30 +20,32 @@ import { TypePetEditComponent } from './pages/private/type-pets/type-pet-edit/ty
 import { PetsComponent } from './pages/private/pets/pets.component';
 import { NosotrosComponent } from './pages/public/nosotros/nosotros.component';
 import { authGuard } from './guards/auth.guard';
+import { noauthGuard } from './guards/no-auth.guard';
+import { EventsComponent } from './pages/public/events/events.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
-    {path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent},
+    {path: 'login', component: LoginComponent, canActivate:[noauthGuard]},
+    {path: 'register', component: RegisterComponent, canActivate:[noauthGuard]},
     {path: 'credits', component: CreditsComponent},
     {path: 'admin', component: DashboardComponent, canActivate: [authGuard]},
     {path: 'about-us', component: NosotrosComponent},
     {path: '404', component: PageNotFoundComponent},
     {path: 'list-pets', component: ListPetsComponent},
-    {path: "events", component: ListOfEventsComponent},
+    {path: "events", component: EventsComponent},
     {path: 'pet/new', component: RegisterPetPublicComponent},
-    {path: 'admin/users', component: UsersComponent},
-    {path: 'admin/pets', component: PetsComponent},
-    {path: 'admin/pet/new', component: RegisterPetComponent},
-    {path: 'admin/pet/edit/:id', component: PetEditPrivateComponent},
-    {path: 'admin/user/new', component: RegisterComponent},
-    {path: 'admin/user/edit', component: UserEditComponent},
-    {path: 'admin/pet/type', component: TypePetsComponent},
-    {path: 'admin/pet/type/new', component: TypePetNewComponent},
-    {path: 'admin/pet/type/edit', component: TypePetEditComponent},
-    { path: "admin/events", component: ListOfEventsComponent},  
-    { path: "admin/event/new", component: CreateEventComponent},
-    { path: "admin/event/edit", component: EditEventComponent},
+    {path: 'admin/users', component: UsersComponent, canActivate: [authGuard]},
+    {path: 'admin/pets', component: PetsComponent, canActivate: [authGuard]},
+    {path: 'admin/pet/new', component: RegisterPetComponent, canActivate: [authGuard]},
+    {path: 'admin/pet/edit/:id', component: PetEditPrivateComponent, canActivate: [authGuard]},
+    {path: 'admin/user/new', component: RegisterComponent, canActivate: [authGuard]},
+    {path: 'admin/user/edit', component: UserEditComponent, canActivate: [authGuard]},
+    {path: 'admin/pet/type', component: TypePetsComponent, canActivate: [authGuard]},
+    {path: 'admin/pet/type/new', component: TypePetNewComponent, canActivate: [authGuard]},
+    {path: 'admin/pet/type/edit', component: TypePetEditComponent, canActivate: [authGuard]},
+    { path: "admin/events", component: ListOfEventsComponent, canActivate: [authGuard]},  
+    { path: "admin/event/new", component: CreateEventComponent, canActivate: [authGuard]},
+    { path: "admin/event/edit", component: EditEventComponent, canActivate: [authGuard]},
     {path: '', redirectTo: 'home', pathMatch: 'full' },
     {path: '**', redirectTo: '404', pathMatch: 'full'}
 ];

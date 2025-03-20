@@ -1,0 +1,37 @@
+.card-admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.card-image-admin {
+    max-width: 100%;
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
+    background-color: #c9c9c9;
+    border-radius: 15px;
+  }
+
+  .card-name-admin {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-card-admin {
+    max-width: 100%;
+    margin: 15px 10px;
+    background-color: #E36B20;
+    border: none;
+    padding: 8px 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: .7rem;
+    display: flex;
+    justify-content: center;
+  }

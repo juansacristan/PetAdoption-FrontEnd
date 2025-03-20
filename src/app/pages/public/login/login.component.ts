@@ -39,9 +39,10 @@ export class LoginComponent {
         next: ( data ) => {
           console.log( data );
           localStorage.setItem('token', data.token! );
+      
           delete data.data?.password;
           localStorage.setItem('authUser', JSON.stringify( data.data ) );
-
+          
           this.router.navigateByUrl('/admin');
 
         },

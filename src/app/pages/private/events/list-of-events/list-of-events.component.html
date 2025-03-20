@@ -1,39 +1,34 @@
 <section class="header-tema">
   <div class="header-container container">
-    <h1 class="titulo-header">Lista de eventos</h1>
+    <h1 class="titulo-header">Lista de ventos</h1>
       <div class="figura-header"></div>
   </div>
 </section>
 
 @if ( isLoading ) {
-    <div>Loading products...</div>
-  } @else {
-      @if ( events.length === 0) {
-        <div class="no-data">Don't have event.</div>
-      } @else {
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>event Name</th>
-              <th>event Description</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            @for (item of events; track $index) {
-              <tr>
-                <td>{{ item.name }}</td>
-                <td>{{ item.descripcion }}</td>
-                <td>
-                  <button>Editar</button>
-                  <button>Eliminar</button>
-                </td>
-              </tr>
-            }
-          </tbody>
-        </table>
-      }
+  <div>Cargando los eventos...</div>
+} @else {
+  <div class="list-card">
+    @if ( events.length === 0) {
+      <div class="no-data">No carga los eventos</div>
+    } @else {
+    }@for (item of events; track $index) {
+      <div class="card">
+          @if(!item.urlImage){
+            <img class="card-image" src="assets/images/image-not-found-01.jpg" alt="no se encontró la imagen solicitada">
+          }
+          @else {
+            <img class="card-image" [src]="item.urlImage" [alt]="item.name">
+          }
+        <p class="card-date">{{ item.date }}</p>
+        <h4 class="card-name">{{ item.name }}</h4>
+        <p class ="card-lugar">{{ item.place }}</p>
+        <p class ="card-inicio">{{ item.starttime }}</p>
+        <p class ="card-inicio">{{ item.timeOfCompletion }}</p>
+        <p class="card-descripcion"> {{ item.descripcion }}</p>
+        <a class="btn-card" [routerLink]="['/admin','event','edit', item._id]">Editar</a>
+        <a class="btn-card" (click)="onRemove(item._id ??'')" >Eliminar</a>
+      </div>
+    }
+  </div>
   }
-
-  
-  

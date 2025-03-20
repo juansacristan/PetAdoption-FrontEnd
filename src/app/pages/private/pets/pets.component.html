@@ -61,7 +61,7 @@
             <p class ="card-gender">{{ pet.gender }}</p>
             <p class="card-race"> {{ pet.race }}</p>
               <a class="btn-card" [routerLink]="['/admin','pet','edit', pet._id]">Editar</a>
-              <button class="btn-card" (click)="onRemove(pet._id ??'')" >Eliminar</button>
+              <a class="btn-card" (click)="onRemove(pet._id ??'')" >Eliminar</a>
           </div>
         }
       </div>

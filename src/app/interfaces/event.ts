@@ -1,4 +1,5 @@
 export interface Event {
+    _id?: string;
     name: string;
     date?: string;
     starttime?: string;
@@ -6,5 +7,6 @@ export interface Event {
     place?: string;
     descripcion?: string;
     state?: boolean;
-    _id?: string;
+    urlImage?: string;
+
 }
