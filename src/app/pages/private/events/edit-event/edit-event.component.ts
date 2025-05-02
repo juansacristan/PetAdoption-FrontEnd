@@ -27,7 +27,8 @@ export class EditEventComponent {
       timeOfCompletion: new FormControl(''),
       place: new FormControl(''),
       descripcion: new FormControl(''),
-      state: new FormControl('')
+      state: new FormControl(''),
+      urlImage: new FormControl('')
     })
   }
 

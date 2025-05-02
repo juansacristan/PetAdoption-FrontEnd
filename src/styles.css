@@ -29,12 +29,6 @@
   }
   
   
-  
-  
-  
-  
-  
-  
   :root {
     --overall-font-size: 62.5%;
   }
@@ -497,6 +491,7 @@
     align-items: center;
     gap: .5rem;
   }
+
   
   .social-footer {
     margin: 0 0 4rem 0;
@@ -507,6 +502,11 @@
     color: #E36B20;
     padding: 0.8rem 1rem;
     border-radius: 5rem;
+    transition: 0.4s;
+  }
+
+  .red-social-footer:hover{
+    transform: translateY(-0.25em);
   }
   
   .copyright {

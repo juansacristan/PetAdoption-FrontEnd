@@ -22,6 +22,7 @@ import { NosotrosComponent } from './pages/public/nosotros/nosotros.component';
 import { authGuard } from './guards/auth.guard';
 import { noauthGuard } from './guards/no-auth.guard';
 import { EventsComponent } from './pages/public/events/events.component';
+import { ContactComponent } from './pages/public/contact/contact.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -33,6 +34,7 @@ export const routes: Routes = [
     {path: '404', component: PageNotFoundComponent},
     {path: 'list-pets', component: ListPetsComponent},
     {path: "events", component: EventsComponent},
+    {path: 'contact', component:ContactComponent},
     {path: 'pet/new', component: RegisterPetPublicComponent},
     {path: 'admin/users', component: UsersComponent, canActivate: [authGuard]},
     {path: 'admin/pets', component: PetsComponent, canActivate: [authGuard]},
@@ -43,9 +45,9 @@ export const routes: Routes = [
     {path: 'admin/pet/type', component: TypePetsComponent, canActivate: [authGuard]},
     {path: 'admin/pet/type/new', component: TypePetNewComponent, canActivate: [authGuard]},
     {path: 'admin/pet/type/edit', component: TypePetEditComponent, canActivate: [authGuard]},
-    { path: "admin/events", component: ListOfEventsComponent, canActivate: [authGuard]},  
-    { path: "admin/event/new", component: CreateEventComponent, canActivate: [authGuard]},
-    { path: "admin/event/edit", component: EditEventComponent, canActivate: [authGuard]},
+    {path: "admin/events", component: ListOfEventsComponent, canActivate: [authGuard]},  
+    {path: "admin/event/new", component: CreateEventComponent, canActivate: [authGuard]},
+    {path: "admin/event/edit", component: EditEventComponent, canActivate: [authGuard]},
     {path: '', redirectTo: 'home', pathMatch: 'full' },
     {path: '**', redirectTo: '404', pathMatch: 'full'}
 ];

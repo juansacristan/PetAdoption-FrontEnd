@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CreateEventComponent {
   formData!: FormGroup
+  states: String[] = ['abierto', 'cerrado']
 
   constructor ( private eventService: EventService, private router: Router) {
       this.formData = new FormGroup ({
@@ -19,8 +20,9 @@ export class CreateEventComponent {
         starttime: new FormControl(),
         timeofcompletion: new FormControl(),
         place: new FormControl(),
-        descripcion: new FormControl(),
-        state: new FormControl()
+        description: new FormControl(),
+        state: new FormControl(),
+        urlImage: new FormControl()
       })
     }
     onSubmit () {

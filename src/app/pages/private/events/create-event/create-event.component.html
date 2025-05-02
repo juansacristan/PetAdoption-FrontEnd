@@ -41,13 +41,19 @@
             <textarea formControlName="descripcion" id="descripcion" placeholder="Descripción del evento" class="form-input"></textarea>
         </div>
 
+                <!-- Subir imagen mascota -->
+                <div class="field input-grupo">
+                    <!-- <label for="image">Subir la foto*</label> -->
+                    <input type="text" formControlName="urlImage" id="image"  class="form-input" placeholder="Colocar la imagen"/>
+                </div>
+
         <!-- Estado -->
         <div class="field">
             <label for="state" class="titulo-input estado">Estado *</label>
             <select formControlName="state" id="state" class="form-input" >
                 <option value="">seleccione...</option>
-                <option value="true">activo</option>
-                <option value="false">inactivo</option>
+                <option value="true">abierto</option>
+                <option value="false">cerrado</option>
             </select>
         </div>
         <div class="field">

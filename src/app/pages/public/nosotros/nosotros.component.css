@@ -1,0 +1,148 @@
+.peludos-nosotros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .peludos-enlace-nosotros {
+        display: flex;
+        flex-direction: row;
+        gap: 3.4rem;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 60%;
+        padding: 0;
+        height: 55rem;
+    }
+}
+.equipo {
+    background-color: #F8F8F8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.acerca-de {
+    margin: 0px 0px 0px -55px;
+}
+
+.nombre-perfil {
+    display: flex
+;
+    justify-content: center;
+    margin: 0px;
+}
+
+.img-acerca{
+    margin: -150px -160px -150px 0px;
+    width: 55rem;
+}
+
+.equipo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .peludos-equipo{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 70%;
+        padding: 0;
+        height: 50rem;
+    }
+}
+.equipo-titulo{
+    font-size: 3.5rem;
+    margin: 1rem 0 2rem 4rem;
+    color: #E36B20;
+}
+
+.img-perfil{
+    width: 33rem;
+}
+
+.formulario-nosotros {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    max-width: 100%;
+    width: 40rem;
+    padding: 2rem 7rem;
+    margin: 5rem 0 5rem 0;
+    border-radius: 3rem;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.08);
+  }
+
+.form-contacto-nosotros {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+.nombre-form-nosotros,
+  .apellido-form-nosotros,
+  .email-form-nosotros,
+  .asunto-form-nosotros,
+  .mensaje {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.3rem;
+    border-radius: 1.6rem;
+    border: 1px solid #D4D4D4;
+    padding: 0.6rem;
+  }
+
+
+
+/** 567px --> 767px */
+@media (min-width: 567px) {
+
+}
+
+/** 768px --> 1023px */
+@media (min-width: 768px) {
+
+}
+
+/** 1024px --> 1999px */
+@media (min-width: 1024px) {
+
+}
+
+/** 1200px --> 1399px */
+@media (min-width: 1200px) {
+
+}
+
+/** 1400px --> 1599px */
+@media (min-width: 1400px) {
+
+}
+
+/** 1600px --> 1919px */
+@media (min-width: 1600px) {
+
+}
+
+/** 1920px --> 2159px */
+@media (min-width: 1920px) {
+
+}
+
+/** 2160px --> 2459px */
+@media (min-width: 2160px) {
+
+}
+
+/** 2160px --> more */
+@media (min-width: 2560px) {
+    .container {
+        max-width: 100%;
+    }
+}

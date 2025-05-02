@@ -1,6 +1,6 @@
 <section class="header-tema">
   <div class="header-container container">
-    <h1 class="titulo-header">Lista de ventos</h1>
+    <h1 class="titulo-header">Lista de Eventos</h1>
       <div class="figura-header"></div>
   </div>
 </section>
@@ -9,6 +9,12 @@
   <div>Cargando los eventos...</div>
 } @else {
   <div class="list-card">
+        <!-- Card Registrar -->
+        <div class="card card-register">
+          <img class="card-image" src="assets/images/image-register.jpg" alt="registrar peludo/a">
+          <a class="btn-card btn-register" routerLink="/admin/event/new">Registrar</a>
+        </div>
+          <!-- Fin Card Registrar -->
     @if ( events.length === 0) {
       <div class="no-data">No carga los eventos</div>
     } @else {
