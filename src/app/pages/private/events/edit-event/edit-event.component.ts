@@ -11,9 +11,10 @@ import { Event } from '../../../../interfaces/event';
   styleUrl: './edit-event.component.css'
 })
 export class EditEventComponent {
-  formData!: FormGroup
+  formData!: FormGroup;
   eventId!: string;
   eventData!: Event;
+  genders: String[] = ['abierto', 'cerrado'];
 
   constructor (
       private route: ActivatedRoute,
@@ -61,9 +62,9 @@ export class EditEventComponent {
                 name: data.data?.name,
                 date: data.data?.date,
                 starttime: data.data?.starttime,
-                timeOfCompletion: data.data?.timeOfCompletion,
+                timeofCompletion: data.data?.timeofCompletion,
                 place: data.data?.place,
-                descripcion: data.data?.descripcion,
+                description: data.data?.description,
                 urlImage: data.data?.urlImage,
                 state: data.data?.state,
               })

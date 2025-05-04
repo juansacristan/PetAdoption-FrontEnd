@@ -25,8 +25,8 @@
 
         <!-- Tiempo finalizado -->
         <div class="field">
-            <label for="timeofcompletion" class="titulo-input horaFinalizado">Hora finzalizado *</label>
-            <input type="time" formControlName="timeofcompletion" id="timeofcompletion" placeholder="Ej: time of completion" class="form-input"/>
+            <label for="timeofCompletion" class="titulo-input horaFinalizado">Hora finzalizado *</label>
+            <input type="time" formControlName="timeofCompletion" id="timeofCompletion" placeholder="Ej: time of completion" class="form-input"/>
         </div>
 
         <!-- Lugar -->
@@ -51,14 +51,15 @@
         <div class="field">
             <label for="state" class="titulo-input estado">Estado *</label>
             <select formControlName="state" id="state" class="form-input" >
-                <option value="">seleccione...</option>
-                <option value="true">abierto</option>
-                <option value="false">cerrado</option>
+                <option value="">Seleccione...</option>
+                @for (state of states; track $index) {
+                    <option [value]="state">{{state}}</option>
+                }
             </select>
         </div>
         <div class="field">
-            <button class="submit" type="submit">
-                <span class="btn-texto">Crear</span>
+            <button class="submit" type="submit" [disabled]="formData.invalid">
+                <span class="btn-texto">Crear evento</span>
             </button>
         </div>
     </div>

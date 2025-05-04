@@ -49,6 +49,8 @@ export class ListOfEventsComponent {
       next:(data) => {
         console.log(data);
         console.log(`evento ${id} eliminado/a exitosamente`);
+
+        this.ngOnInit();    // Actualiza datos
       },
       error: (err) => {
         console.error(err);

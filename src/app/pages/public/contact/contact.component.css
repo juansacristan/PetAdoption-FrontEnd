@@ -1,0 +1,83 @@
+.formulario-contact {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    max-width: 100%;
+    width: 45rem;
+    padding: 2rem 7rem 4rem 7rem;
+    margin: 5rem 0 5rem 0;
+    border-radius: 3rem;
+    border: 1px solid #E36B20;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.08);
+  }
+
+.form-contacto-contacto {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+.nombre-form-contacto,
+  .apellido-form-contacto,
+  .email-form-contacto,
+  .asunto-form-contacto,
+  .mensaje {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.3rem;
+    border-radius: 1.6rem;
+    border: 1px solid #D4D4D4;
+    padding: 0.6rem;
+  }
+
+
+
+/** 567px --> 767px */
+@media (min-width: 567px) {
+
+}
+
+/** 768px --> 1023px */
+@media (min-width: 768px) {
+
+}
+
+/** 1024px --> 1999px */
+@media (min-width: 1024px) {
+
+}
+
+/** 1200px --> 1399px */
+@media (min-width: 1200px) {
+
+}
+
+/** 1400px --> 1599px */
+@media (min-width: 1400px) {
+
+}
+
+/** 1600px --> 1919px */
+@media (min-width: 1600px) {
+
+}
+
+/** 1920px --> 2159px */
+@media (min-width: 1920px) {
+
+}
+
+/** 2160px --> 2459px */
+@media (min-width: 2160px) {
+
+}
+
+/** 2160px --> more */
+@media (min-width: 2560px) {
+    .container {
+        max-width: 100%;
+    }
+}

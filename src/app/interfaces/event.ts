@@ -3,9 +3,9 @@ export interface Event {
     name: string;
     date?: string;
     starttime?: string;
-    timeOfCompletion?: string;
+    timeofCompletion?: string;
     place?: string;
-    descripcion?: string;
+    description?: string;
     state?: boolean;
     urlImage?: string;
 

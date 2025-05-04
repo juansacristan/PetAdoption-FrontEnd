@@ -94,6 +94,7 @@ export class RegisterPetComponent {
           complete: () => {
             console.log( 'Registro exitoso' );
             this.formData.reset();    // Limpia los campos del formulario
+            this.router.navigate(['/list-pets']);
           } 
         });
       }

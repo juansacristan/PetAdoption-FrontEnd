@@ -1011,6 +1011,10 @@
       justify-content: center;
     }
 
+    button.btn-card {
+      width: 94%;
+  }
+
     .btn-register {
       width: 100%;
   }

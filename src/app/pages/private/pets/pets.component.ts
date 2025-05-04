@@ -24,7 +24,8 @@ export class PetsComponent {
         console.log(data);
 
         this.pets = data.data ?? [];
-        console.log('Peludos obtained successfully')
+        console.log('Peludos obtained successfully');
+
       },
       error: (error) => {
         console.error(error);
@@ -52,6 +53,8 @@ export class PetsComponent {
       next:(data) => {
         console.log(data);
         console.log(`Peludo/a ${id} eliminado/a exitosamente`);
+
+        this.ngOnInit();    // Actualiza datos
       },
       error: (err) => {
         console.error(err);

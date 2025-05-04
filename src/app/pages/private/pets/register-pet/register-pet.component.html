@@ -48,7 +48,7 @@
             <label class="titulo-input" for="gender">Genero*</label>
             <!-- <input type="text" formControlName="gender" id="gender" placeholder="Ej: femenino" /> -->
              <select  class="form-input" formControlName="gender" id="gender" >
-                <option value="" >Selected...</option>
+                <option value="" >Seleccione...</option>
                 @for (gender of genders; track $index) {
                     <option [value]="gender">{{gender}}</option>
                 }
@@ -91,7 +91,7 @@
             <label class="titulo-input" for="state">Estado*</label>
             <!-- <input type="text" formControlName="state" id="state" placeholder="Ej: femenino" /> -->
              <select class="form-input" formControlName="state" id="state">
-                <option value="">Selected...</option>
+                <option value="">Seleccione...</option>
                 @for (state of states; track $index) {
                     <option [value]="state">{{state}}</option>
                 }

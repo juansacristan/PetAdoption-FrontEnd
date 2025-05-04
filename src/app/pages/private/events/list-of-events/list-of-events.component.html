@@ -26,14 +26,14 @@
           @else {
             <img class="card-image" [src]="item.urlImage" [alt]="item.name">
           }
-        <p class="card-date">{{ item.date }}</p>
+        <p class="card-date">Fecha de evento: {{ item.date }}</p>
         <h4 class="card-name">{{ item.name }}</h4>
-        <p class ="card-lugar">{{ item.place }}</p>
-        <p class ="card-inicio">{{ item.starttime }}</p>
-        <p class ="card-inicio">{{ item.timeOfCompletion }}</p>
-        <p class="card-descripcion"> {{ item.descripcion }}</p>
+        <p class ="card-lugar">Lugar: {{ item.place }}</p>
+        <p class ="card-inicio">Hora inicio: {{ item.starttime }}</p>
+        <p class ="card-inicio">Hora fin: {{ item.timeofCompletion }}</p>
+        <p class="card-descripcion"> {{ item.description }}</p>
         <a class="btn-card" [routerLink]="['/admin','event','edit', item._id]">Editar</a>
-        <a class="btn-card" (click)="onRemove(item._id ??'')" >Eliminar</a>
+        <button class="btn-card" (click)="onRemove(item._id ??'')" >Eliminar</button>
       </div>
     }
   </div>
