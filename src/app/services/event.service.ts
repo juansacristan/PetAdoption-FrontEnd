@@ -17,9 +17,10 @@ export class EventService {
   }
 
   createEvent( newEvent: Event ) : Observable<Response<Event>>{
-    return this.http.post<Response<Event>>( "http://localhost:3000/api/events", newEvent);
-    // debe quedar de esta forma para que funcione
-    // return this.http.post( "http://localhost:3000/api/events", newEvent, { headers });
+    console.log( newEvent );
+    //return this.http.post<Response<Event>>( "http://localhost:3000/api/events", newEvent);
+    //debe quedar de esta forma para que funcione
+    return this.http.post<Response<Event>>( "http://localhost:3000/api/events", newEvent, { headers: this.headers });
   }
 
   getEvents() : Observable<Response<Event[]>>{

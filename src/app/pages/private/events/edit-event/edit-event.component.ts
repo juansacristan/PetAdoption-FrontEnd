@@ -25,9 +25,9 @@ export class EditEventComponent {
       name: new FormControl('', [Validators.required]),
       date: new FormControl(''),
       starttime: new FormControl(''),
-      timeOfCompletion: new FormControl(''),
+      timeofCompletion: new FormControl(''),
       place: new FormControl(''),
-      descripcion: new FormControl(''),
+      description: new FormControl(''),
       state: new FormControl(''),
       urlImage: new FormControl('')
     })
