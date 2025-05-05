@@ -65,8 +65,8 @@ export class EditEventComponent {
                 timeofCompletion: data.data?.timeofCompletion,
                 place: data.data?.place,
                 description: data.data?.description,
-                urlImage: data.data?.urlImage,
                 state: data.data?.state,
+                urlImage: data.data?.urlImage
               })
       
       },

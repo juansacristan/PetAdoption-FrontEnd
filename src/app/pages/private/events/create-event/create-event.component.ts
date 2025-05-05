@@ -21,7 +21,7 @@ export class CreateEventComponent {
         name: new FormControl(),
         date: new FormControl(),
         starttime: new FormControl(),
-        timeofcompletion: new FormControl(),
+        timeofCompletion: new FormControl(),
         place: new FormControl(),
         description: new FormControl(),
         state: new FormControl(),
