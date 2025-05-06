@@ -22,7 +22,7 @@ export class EventsComponent {
         console.log( data );
 
         this.events = data.data?? [];
-        console.log( "eventos obtained successfully" );
+        console.log( "Events obtained successfully" );
       },
 
       error: (error) => {

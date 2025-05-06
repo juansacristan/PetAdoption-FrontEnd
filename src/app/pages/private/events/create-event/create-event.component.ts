@@ -43,7 +43,7 @@ export class CreateEventComponent {
             console.log( err );
           },
           complete: () => {
-            console.log( 'Register product successfully' );
+            console.log( 'Register event successfully' );
             this.formData.reset();
             this.router.navigate(['/events']);
           }

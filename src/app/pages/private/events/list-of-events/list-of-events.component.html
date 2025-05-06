@@ -7,36 +7,34 @@
 
 @if ( isLoading ) {
   <div>Cargando los eventos...</div>
-} @else {
-  <div class="list-card">
-        <!-- Card Registrar -->
-        <div class="card card-register">
-          <img class="card-image" src="assets/images/image-register.jpg" alt="registrar peludo/a">
-          <a class="btn-card btn-register" routerLink="/admin/event/new">Registrar</a>
-        </div>
-          <!-- Fin Card Registrar -->
-    @if ( events.length === 0) {
-      <div class="no-data">No carga los eventos</div>
-    } @else {
-      @for (item of events; track $index) {
-        <div class="card">
-            @if(!item.urlImage){
-              <img class="card-image" src="assets/images/image-not-found-01.jpg" alt="no se encontró la imagen solicitada">
-            }
-            @else {
-              <img class="card-image" [src]="item.urlImage" [alt]="item.name">
-              {{ item.urlImage }}
-            }
-          <p class="card-date">Fecha de evento: {{ item.date }}</p>
-          <h4 class="card-name">{{ item.name }}</h4>
-          <p class ="card-lugar">Lugar: {{ item.place }}</p>
-          <p class ="card-inicio">Hora inicio: {{ item.starttime }}</p>
-          <p class ="card-inicio">Hora fin: {{ item.timeofCompletion }}</p>
-          <p class="card-descripcion"> {{ item.description }}</p>
-          <a class="btn-card" [routerLink]="['/admin','event','edit', item._id]">Editar</a>
-          <button class="btn-card" (click)="onRemove(item._id ??'')" >Eliminar</button>
-        </div>
-      }
-    }
-  </div>
+} 
+@else {
+  
+  @if ( events.length === 0) {
+    <div class="no-data">No carga los eventos</div>
+  } 
+  @else {
   }
+  <div class="list-card">
+  @for (item of events; track $index) {
+    <div class="card">
+        @if(!item.urlImage){
+          <img class="card-image" src="assets/images/image-not-found-01.jpg" alt="no se encontró la imagen solicitada">
+        }
+        @else {
+          <img class="card-image" [src]="item.urlImage" [alt]="item.name">
+        }
+      <p class="card-date">Fecha de evento: {{ item.date }}</p>
+      <h4 class="card-name">{{ item.name }}</h4>
+      <p class ="card-lugar">Lugar: {{ item.place }}</p>
+      <p class ="card-inicio">Hora inicio: {{ item.starttime }}</p>
+      <p class ="card-inicio">Hora fin: {{ item.timeofCompletion }}</p>
+      <p class="card-descripcion">Descripción: {{ item.description }}</p>
+      <a class="btn-card" [routerLink]="['/admin','event','edit', item._id]">Editar</a>
+      <button class="btn-card" (click)="onRemove(item._id ??'')" >Eliminar</button>
+    </div>
+  }
+</div>
+}
+
+

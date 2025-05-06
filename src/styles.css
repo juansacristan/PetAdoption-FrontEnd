@@ -455,6 +455,7 @@
   
   .footer-lista {
     background-color: #131313;
+    /* width: 56rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -580,6 +581,7 @@
     .container {
         max-width: 54rem;
         padding: 0 1.6rem;
+        width: 108rem;
     }
   
     .menu-usuario {

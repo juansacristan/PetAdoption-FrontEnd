@@ -9,12 +9,13 @@
   <div>Cargando los eventos...</div>
 } 
 @else {
-  <div class="list-card">
+  
     @if ( events.length === 0) {
       <div class="no-data">No carga los eventos</div>
     } 
     @else {
     }
+    <div class="list-card">
     @for (item of events; track $index) {
       <div class="card">
           @if(!item.urlImage){
@@ -28,7 +29,7 @@
         <p class ="card-lugar">Lugar: {{ item.place }}</p>
         <p class ="card-inicio">Hora inicio: {{ item.starttime }}</p>
         <p class ="card-inicio">Hora fin: {{ item.timeofCompletion }}</p>
-        <p class="card-descripcion"> {{ item.description }}</p>
+        <p class="card-descripcion">Descripción: {{ item.description }}</p>
       </div>
     }
   </div>
